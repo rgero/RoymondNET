@@ -1,0 +1,26 @@
+td {
+  padding: 10px
+}
+
+table {
+  background-color: grey;
+  border-radius: 13px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px
+}
+
+.right{
+  right: 0px;
+  text-align: right;
+}
+
+.endform{
+  display:flex;
+  justify-content: space-between;
+}
+
+.explanation{
+  padding-bottom:10px;
+  text-align:center;
+}

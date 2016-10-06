@@ -1,17 +1,21 @@
 <html>
   <head>
+    <link rel="stylesheet" href="style.css">
     <title>
       Search the Penalty Tracker
     </title>
   </head>
   <body>
     <h1>Search the Penalty Tracker Database</h1>
+    <div class="explanation">
+    Every item in this form is optional. If you want to see the whole database, just hit submit.
+    </div>
     <div>
       <form method="get" action="/search/">
         <table>
           <tr>
             <td>Home Team</td>
-            <td>
+            <td class="right">
               <select name="HomeTeam" multiple>
                 <option value="ANA">Anaheim Ducks</option>
                 <option value="ARI">Arizona Coyotes</option>
@@ -48,7 +52,7 @@
           </tr>
           <tr>
             <td>Away Team</td>
-            <td>
+            <td class="right">
               <select name="AwayTeam" multiple>
                 <option value="ANA">Anaheim Ducks</option>
                 <option value="ARI">Arizona Coyotes</option>
@@ -85,7 +89,35 @@
           </tr>
           <tr>
             <td>
-              <input type="submit">
+              Player Name
+            </td>
+            <td>
+              <textarea name="PlayerName" rows="10" cols="30">Enter name seperated by a new line</textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Referee Name
+            </td>
+            <td>
+              <textarea name="RefName" rows="10" cols="30">Enter name seperated by a new line</textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Date Range
+            </td>
+            <td class="right">
+              Start Date: <input type="date" name="startDate"><BR>
+              End Date: <input type="date" name="endDate">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="endform">
+                <input type="reset">
+                <input type="submit">
+              </div>
             </td>
           </tr>
         </table>
