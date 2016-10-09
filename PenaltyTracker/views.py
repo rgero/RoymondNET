@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -21,13 +22,35 @@ def form_test(request):
     else:
         form = PenaltySearchForm()
 
-    return render(request, 'search.html', {'form': form})  
-    
+    return render(request, 'search.html', {'form': form})
+
 def print_results(request):
   if request.method != 'POST':
     raise Http404
 
-  myForm = PenaltySearchForm(request.POST)
+  submittedForm = PenaltySearchForm(request.POST)
 
-  if myForm.is_valid():
+  if submittedForm.is_valid():
+    #Get the raw data
+    cleanedData = submittedForm.cleaned_data
+    playerName = cleanedData["playerName"]
+    homeTeams = cleanedData["homeTeam"]
+    awayTeams = cleanedData["awayTeam"]
+    homeAway = cleanedData["homeAway"]
+    penalty = cleanedData["penalty"]
+    startDate = cleanedData["startDate"]
+    endDate = cleanedData["endDate"]
+    refs = cleanedData["refs"]
+
+    homeTeams = getFullNames(homeTeams)
+    awayTeams = getFullNames(awayTeams)
+    penalty = getList(penalty)
+    refs = getList(refs)
+
     return render(request, 'results.html', {'results': myForm.cleaned_data})
+
+def getList(i):
+  return re.split("\s*,\s*", i)
+
+def getFullNames(i):
+  #Insert dictionary.
