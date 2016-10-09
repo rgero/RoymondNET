@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>
+      Search the Penalty Tracker
+    </title>
+  </head>
+  <body>
+    <h1>Penalty Tracker Database</h1>
+    <div class="explanation">
+    Every item in this form is optional. If you want to see the whole database, just hit submit.
+    </div>
+      <form action="printresults/" method="post">
+    <div>
+        {% csrf_token %}
+        <table>{{ form.as_table }}</table>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

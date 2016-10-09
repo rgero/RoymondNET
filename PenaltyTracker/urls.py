@@ -2,5 +2,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.form_test, name='index'),
+    url(r'^printresults/$', views.print_results, name="index"),
 ]
