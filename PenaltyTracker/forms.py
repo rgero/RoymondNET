@@ -1,4 +1,5 @@
 from django import forms
+from datetime import datetime
 
 class PenaltySearchForm(forms.Form):
   teamList = [("ANA","Anaheim Ducks"),
@@ -36,6 +37,6 @@ class PenaltySearchForm(forms.Form):
   awayTeam = forms.MultipleChoiceField(label="Away Team", choices=teamList, required=False)
   homeAway = forms.ChoiceField(label="Home or Away",choices=[("Either","Either"),("Home","Home"),("Away","Away")], required=False)
   penalty = forms.CharField(label="Penalty", max_length=100, required=False)
-  startDate = forms.DateField(label="Start Date", required=False)
-  endDate = forms.DateField(label="End Date", required=False)
+  startDate = forms.DateField(label="Start Date", required=False, help_text="Format: YYYY-MM-DD")
+  endDate = forms.DateField(label="End Date", required=False, help_text="Format: YYYY-MM-DD")
   refs = forms.CharField(label="Referee's Name", max_length=200, required=False)
