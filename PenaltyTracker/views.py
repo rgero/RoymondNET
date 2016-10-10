@@ -34,23 +34,23 @@ def print_results(request):
     #Get the raw data
     cleanedData = submittedForm.cleaned_data
     playerNames = getList(cleanedData["playerName"])
-    homeTeams = getFullNames(cleanedData["homeTeam"])
-    awayTeams = getFullNames(cleanedData["awayTeam"])
+    playerTeam = getFullNames(cleanedData["playerTeam"])
+    opponent = getFullNames(cleanedData["opponent"])
     homeAway = cleanedData["homeAway"]
     penalty = getList(cleanedData["penalty"])
     startDate = cleanedData["startDate"]
     endDate = cleanedData["endDate"]
     refs = getList(cleanedData["refs"])
 
-    Data = {"playerNames":playerNames,
-            "homeTeams": homeTeams,
-            "awayTeams": awayTeams,
+    Data = {"playerName":playerNames,
+            "teamName": playerTeam,
+            "opponentTeam": opponent,
             "homeAway": homeAway,
             "penalty": penalty,
             "startDate": startDate,
             "endDate": endDate,
             "refs": refs}
 
-    print listToSQLString(playerNames)
+    performSearch(Data)
 
     return render(request, 'results.html', Data)

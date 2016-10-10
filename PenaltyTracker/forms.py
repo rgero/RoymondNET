@@ -33,8 +33,8 @@ class PenaltySearchForm(forms.Form):
               ("WSH","Washington Capitals"),
               ("WPG","Winnipeg Jets")]
   playerName = forms.CharField(label="Player Name", max_length=100, required=False)
-  homeTeam = forms.MultipleChoiceField(label="Home Team", choices=teamList, required=False)
-  awayTeam = forms.MultipleChoiceField(label="Away Team", choices=teamList, required=False)
+  playerTeam = forms.MultipleChoiceField(label="Player's Team", choices=teamList, required=False)
+  opponent = forms.MultipleChoiceField(label="Opponent", choices=teamList, required=False)
   homeAway = forms.ChoiceField(label="Home or Away",choices=[("Either","Either"),("Home","Home"),("Away","Away")], required=False)
   penalty = forms.CharField(label="Penalty", max_length=100, required=False)
   startDate = forms.DateField(label="Start Date", required=False, help_text="Format: YYYY-MM-DD")

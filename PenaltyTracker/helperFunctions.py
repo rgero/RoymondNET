@@ -1,4 +1,4 @@
-import re, sqlite3
+import re, sqlite3, os, datetime
 
 def getList(i):
   values = re.split("\s*,\s*", i)
@@ -43,20 +43,56 @@ def getFullNames(i):
   return returnList
 
 def listToSQLString(entry):
-  if len(entry) >= 1 and entry[0]!="":
     resultString = "("
     for i in entry:
-      resultString += "'" + i + "',"
+      if i != "":
+        resultString += "'" + i + "',"
     resultString = resultString[0:len(resultString)-1] + ")"
-  else:
-    resultString = "()"
-  return resultString
+    return resultString
+
+
+def constructWHERE(entry):
+  '''Entry is the search form dictionary'''
+  potentialMultiItems = ["playerName","teamName","opponentTeam","penalty","refs"]
+  listOfItems = []
+  for i in potentialMultiItems:
+      if len(entry[i]) >= 1 and entry[i][0]!="":
+          listOfItems.append(i + " IN " + listToSQLString(entry[i]))
+  if entry["homeAway"] == "Home":
+      listOfItems.append("homeAway=0")
+  elif entry["homeAway"] == "Away":
+      listOfItems.append("homeAway=1")
+  if entry["startDate"] != None and entry["endDate"] != None:
+      listOfItems.append("gameDate BETWEEN '" + entry["startDate"].strftime("%m/%d/%Y") + "' AND '" \
+      + (entry["endDate"]+datetime.timedelta(days=1)).strftime("%m/%d/%Y") + "'")
+  if entry["startDate"] == None and entry["endDate"] != None:
+      listOfItems.append("gameDate BETWEEN '" + entry["endDate"].strftime("%m/%d/%Y") + "' AND '" \
+      + (entry["endDate"]+datetime.timedelta(days=1)).strftime("%m/%d/%Y") + "'")
+  if entry["startDate"] != None and entry["endDate"] == None:
+      listOfItems.append("gameDate BETWEEN '" + entry["startDate"].strftime("%m/%d/%Y") + "' AND '" \
+      + (entry["startDate"]+datetime.timedelta(days=1)).strftime("%m/%d/%Y") + "'")
+  where_string = ""
+  for j in range(0, len(listOfItems)-1):
+      where_string += listOfItems[j] + " AND "
+  where_string += listOfItems[len(listOfItems)-1]
+  return where_string
+
 
 
 def performSearch(query):
-  conn = sqlite3.connect()
+  print(os.getcwd())
+  conn = sqlite3.connect(os.path.join(os.getcwd(), "PenaltyTracker\\static\\2015-16.db"))
   cursor = conn.cursor()
 
 
+  executionString = "SELECT * FROM PenaltyTracker "
+  where_string = constructWHERE(query)
+  if where_string!="":
+      executionString += "WHERE " + where_string
 
-  executionString = "SELECT * FROM PenaltyTracker WHERE"
+  executionString += " ORDER BY gameDate"
+
+  print executionString
+
+  results = cursor.execute(executionString).fetchall()
+  print( len(results) )
