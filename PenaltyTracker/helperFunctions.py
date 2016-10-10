@@ -1,4 +1,4 @@
-import re
+import re, sqlite3
 
 def getList(i):
   values = re.split("\s*,\s*", i)
@@ -41,3 +41,22 @@ def getFullNames(i):
   for entry in i:
     returnList.append(teamList[entry])
   return returnList
+
+def listToSQLString(entry):
+  if len(entry) >= 1 and entry[0]!="":
+    resultString = "("
+    for i in entry:
+      resultString += "'" + i + "',"
+    resultString = resultString[0:len(resultString)-1] + ")"
+  else:
+    resultString = "()"
+  return resultString
+
+
+def performSearch(query):
+  conn = sqlite3.connect()
+  cursor = conn.cursor()
+
+
+
+  executionString = "SELECT * FROM PenaltyTracker WHERE"

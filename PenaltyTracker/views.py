@@ -51,4 +51,6 @@ def print_results(request):
             "endDate": endDate,
             "refs": refs}
 
+    print listToSQLString(playerNames)
+
     return render(request, 'results.html', Data)
