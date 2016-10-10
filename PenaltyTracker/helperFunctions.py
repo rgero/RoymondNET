@@ -96,3 +96,4 @@ def performSearch(query):
 
   results = cursor.execute(executionString).fetchall()
   print( len(results) )
+  return results

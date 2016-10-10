@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from .forms import PenaltySearchForm
 from .helperFunctions import *
 
-# Create your views here.
+import datetime
 
 def form_test(request):
     # if this is a POST request we need to process the form data
@@ -51,6 +51,6 @@ def print_results(request):
             "endDate": endDate,
             "refs": refs}
 
-    performSearch(Data)
+    queryResults = performSearch(Data)
 
-    return render(request, 'results.html', Data)
+    return render(request, 'results.html', {"data":queryResults, "time":datetime.date.today()})

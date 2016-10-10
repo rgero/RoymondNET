@@ -1,89 +1,103 @@
+
 <html>
-  <head>
-    <link rel="stylesheet" href="style.css">
-    <title>
-      Search the Penalty Tracker
-    </title>
-  </head>
-  <body>
-    <h1>Search the Penalty Tracker Database</h1>
-    <div class="explanation">
-    Every item in this form is optional. If you want to see the whole database, just hit submit.
-    </div>
-        <table>
+	<head>
+		<title>Penalty Tracker Website! Playoffs 2016</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- DataTables CSS -->
+		<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
+
+		<!-- jQuery -->
+		<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+		<!-- DataTables -->
+		<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+		<script type="text/javascript" charset="utf8" src="http://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+		<script type="text/javascript" charset="utf8" src="http://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+		<script type="text/javascript" charset="utf8" src="http://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+		<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
+
+
+	</head>
+
+	<body>
+		<center>
+			<h1>Penalty Tracker! Playoff Edition!</h1>
+			<p id="explanation">
+				<b><u>How this program works</u></b><BR/><BR/>
+					This program runs a script nightly to parse through the box scores of NHL games, obtaining relevant data about the penalties that occurred during the game. This webpage takes the data that was obtained, and allows you to select what you want to see.<BR/><BR/>
+					To see the source code for this project, the code repository is located <a href="https://github.com/Roymond35/Penalty_Tracker" alt="Link to the code repository">here</a>
+				<BR>
+				<button id="hideExplanation">Hide this Explanation</button>
+			</p>
+			<p>To view the data from the 2015-2016 regular season, click <a href="http://roymond.net/penaltytracker/RS-2015_2016.html">here</a></p>
+		<table id="penaltyTable">
+			<thead>
+				<tr>
+					<th id="header_playerName">Player</th>
+					<th id="header_playerTeam">Team Name</th>
+					<th id="header_playerPenalty">Penalty</th>
+					<th id="header_penaltyDate">Date</th>
+					<th id="header_opponentName">Opponent</th>
+					<th id="header_location">H/A</th>
+					<th id="header_referees">Refs</th></tr>
+				</tr>
+			</thead>
+			<tbody>
+        {% for row in data %}
           <tr>
-            <th>
-              Category
-            </th>
-            <th>
-              Result
-            </th>
+            <td>{{ row.1 }}</td>
+            <td>{{ row.2 }}</td>
+            <td>{{ row.3 }}</td>
+            <td>{{ row.4 }}</td>
+            <td>{{ row.5 }}</td>
+            <td>{{ row.6 }}</td>
+            <td>{{ row.7 }}</td>
           </tr>
-          <tr>
-            <td>
-              Players
-            </td>
-            <td>
-              {{playerName}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Player Team
-            </td>
-            <td>
-              {{teamName}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Opponent
-            </td>
-            <td>
-              {{opponentTeam}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Penalties
-            </td>
-            <td>
-              {{penalty}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              startDate
-            </td>
-            <td>
-              {{startDate}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              endDate
-            </td>
-            <td>
-              {{endDate}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              refs
-            </td>
-            <td>
-              {{refs}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Side
-            </td>
-            <td>
-              {{homeAway}}
-            </td>
-          </tr>
-        </table>
-    </div>
-  </body>
+        {% endfor %}
+			</tbody>
+		</table>
+
+
+
+
+		<script type="text/javascript">
+			$(document).ready( function () {
+				$('#penaltyTable').DataTable(
+				 {
+						dom: '<"bottom"Bfrtip>rt<"top"flp>',
+						"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+						buttons: [
+							{
+								extend: 'copyHtml5',
+								text: 'Copy for Reddit',
+								fieldSeparator: ' | ',
+								header: true
+							},
+							{
+								extend: 'excelHtml5',
+								title: 'Penalty Data export'
+							},
+							{
+								extend: 'pdfHtml5',
+								title: 'Penalty Data export'
+							},
+							{
+								extend: 'csvHtml5',
+								title: 'Penalty Data export'
+							},
+						]
+				});
+			});
+
+			document.getElementById("hideExplanation").onclick = function(){
+				$("#explanation").css("display","none");
+			};
+		</script>
+		<div></div>
+        <p/>
+		<div id="footer">This list was last updated on: <B id="newDate">{{time}}</b></div>
+	</body>
 </html>
