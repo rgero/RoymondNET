@@ -10,7 +10,72 @@
     <div class="explanation">
     Every item in this form is optional. If you want to see the whole database, just hit submit.
     </div>
-        {{results}}
+        <table>
+          <tr>
+            <th>
+              Category
+            </th>
+            <th>
+              Result
+            </th>
+          </tr>
+          <tr>
+            <td>
+              Players
+            </td>
+            <td>
+              {{playerNames}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Home Teams
+            </td>
+            <td>
+              {{homeTeams}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Away Teams
+            </td>
+            <td>
+              {{awayTeams}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Penalties
+            </td>
+            <td>
+              {{penalty}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              startDate
+            </td>
+            <td>
+              {{startDate}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              endDate
+            </td>
+            <td>
+              {{endDate}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              refs
+            </td>
+            <td>
+              {{refs}}
+            </td>
+          </tr>
+        </table>
     </div>
   </body>
 </html>
