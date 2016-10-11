@@ -74,7 +74,8 @@ def constructWHERE(entry):
   where_string = ""
   for j in range(0, len(listOfItems)-1):
       where_string += listOfItems[j] + " AND "
-  where_string += listOfItems[len(listOfItems)-1]
+  if len(listOfItems) >= 1:
+    where_string += listOfItems[len(listOfItems)-1]
   return where_string
 
 

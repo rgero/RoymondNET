@@ -1,8 +1,9 @@
 
 <html>
 	<head>
-		<title>Penalty Tracker Website! Playoffs 2016</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Penalty Tracker Website!</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static "pt_style.css" %}">
 		<!-- DataTables CSS -->
 		<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
@@ -24,7 +25,7 @@
 
 	<body>
 		<center>
-			<h1>Penalty Tracker! Playoff Edition!</h1>
+			<h1>Penalty Tracker - 2016-17 Edition</h1>
 			<p id="explanation">
 				<b><u>How this program works</u></b><BR/><BR/>
 					This program runs a script nightly to parse through the box scores of NHL games, obtaining relevant data about the penalties that occurred during the game. This webpage takes the data that was obtained, and allows you to select what you want to see.<BR/><BR/>
@@ -32,7 +33,7 @@
 				<BR>
 				<button id="hideExplanation">Hide this Explanation</button>
 			</p>
-			<p>To view the data from the 2015-2016 regular season, click <a href="http://roymond.net/penaltytracker/RS-2015_2016.html">here</a></p>
+			<p>To perform another search, click <a href="/penaltytracker/">here</a></p>
 		<table id="penaltyTable">
 			<thead>
 				<tr>
