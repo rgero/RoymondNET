@@ -1,6 +1,7 @@
 <html>
   <head>
     {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href='{% static "style.css" %}'>
     <title>
       Search the Penalty Tracker
@@ -11,13 +12,16 @@
     <div class="explanation">
     Every item in this form is optional. If you want to see the whole database, just hit submit.
     </div>
+    <center>
+    <div class="form">
       <form action="printresults/" method="post">
-    <div>
+
         {% csrf_token %}
         <table>{{ form.as_table }}</table>
 
         <input type="submit" value="Submit" />
       </form>
     </div>
+    </center>
   </body>
 </html>
