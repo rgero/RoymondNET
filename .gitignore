@@ -89,3 +89,4 @@ ENV/
 .ropeproject
 db.sqlite3
 Website/credentials.py
+static/admin/*
