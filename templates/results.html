@@ -54,7 +54,10 @@
             <td>{{ row.3 }}</td>
             <td>{{ row.4 }}</td>
             <td>{{ row.5 }}</td>
-            <td>{{ row.6 }}</td>
+            <td>
+							{% if row.6 == 1 %}Away{% elif row.6 == 0 %}Home{% endif %}
+
+						</td>
             <td>{{ row.7 }}</td>
           </tr>
         {% endfor %}
