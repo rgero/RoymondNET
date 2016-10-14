@@ -82,7 +82,12 @@ def constructWHERE(entry):
 
 def performSearch(query):
   print(os.getcwd())
-  conn = sqlite3.connect(os.path.join(os.getcwd(), "PenaltyTracker\\static\\2015-16.db"))
+  dblocation = os.path.join(os.getcwd(), "PenaltyTracker")
+  dblocation = os.path.join(dblocation, "static")
+  dblocation = os.path.join(dblocation, "season.db")
+  print os.path.isfile(dblocation)
+
+  conn = sqlite3.connect(dblocation)
   cursor = conn.cursor()
 
 

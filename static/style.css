@@ -1,0 +1,94 @@
+@link-color:       @brand-primary;
+@link-hover-color: darken(@link-color, 15%);
+
+body {
+	background-color: #070707;
+	color: #B8DBD9;
+}
+
+.contact{
+	background-color: #2F4550;
+	border:1px solid gray;
+	border-radius: 10px;
+	padding:10px;
+}
+
+h1 {
+  color: #228B22;
+  padding-top:15px;
+  padding-bottom: 0px;
+  margin-bottom:0px;
+  text-align:center;
+}
+
+h3,h4 {
+	text-decoration:underline;
+}
+
+.center {
+	background-color: #2F4550;
+	border:1px solid gray;
+	border-radius: 10px;
+	padding:20px;
+}
+
+.contact a {
+  color: #777;
+  text-decoration: none;
+  font-weight:bold;
+}
+
+.contact a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:hover {
+	color: #000000;
+}
+
+.navbar-inverse{
+	background-color: #2F4550;
+}
+
+.footer{
+	color: darken(#2F4550,75%);
+	font-size:75%;
+	text-align: right;
+}
+
+#strong-white{
+	color: #FFFFFF;
+    font-weight: bold;
+}
+
+#underline {
+    text-decoration: underline;
+}
+
+td{
+  color:black;
+  padding:10px;
+}
+
+th{
+  padding:10px;
+}
+
+input {
+  color:black;
+  background-color: #d1d1d1;
+}
+
+.form{
+  background-color:#2F4F4F;
+  width:40%;
+  border-radius:10px;
+  padding:15px;
+}
+
+.helptext{
+  color:#FFFFFF;
+  font-weight: bold;
+  text-align:center;
+}
