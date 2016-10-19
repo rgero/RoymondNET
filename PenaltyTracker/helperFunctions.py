@@ -90,6 +90,7 @@ def performSearch(query):
   print(os.getcwd())
   dblocation = os.path.join(os.getcwd(), "PenaltyTracker")
   dblocation = os.path.join(dblocation, "static")
+  dblocation = os.path.join(dblocation, "penaltytracker")
   dblocation = os.path.join(dblocation, "season.db")
   print os.path.isfile(dblocation)
 
