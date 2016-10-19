@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'personal',
     'PenaltyTracker.apps.PenaltyTrackerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
