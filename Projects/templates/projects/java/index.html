@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+
+{% block content %}
+{% load staticfiles %}
+			<h2 id="Top">Java</h2>
+            <hr>
+            <p>Java was the first compiled programming language that I started to learn on my own. Originally, I wanted to use it to mod the game Minecraft. However it opened the doors to several different courses as well as a deeper understanding of object oriented programming.
+
+            <p>To learn Java, I signed up for an “Intro To Java Programming” course offered by San Jose State University on Udacity. After completing the course, I instantly started diving into modding Minecraft. Unfortunately, through the shuffle of upgrading computers, the first mod I worked on was completely lost, with the exception of a single screenshot.
+            
+            <center>
+            <p><a href="{% static 'projects/java/firstMinecraftMod.png'%}" target="_blank"><img src="{% static 'projects/java/firstMinecraftMod.png'%}" alt="My first mod" height="33%" width="33%"></a></p>
+            </center>
+            
+            <p>After playing around with Minecraft a bit, I wanted to expand my knowledge of programming. With Java as the catalyst, I was able to take a course on Udemy that provided my first exposure  to data structures and algorithms. This course was quickly followed up by second course in algorithms offered by Robert Sedgewick.
+
+            <p>The last course I took on Java was actually an introduction to Android Development. Those projects are grouped under a different section.
+
+            <h3>Courses:</h3>
+            <UL>
+                <LI> Udacity - Intro to Java Programming - <a href="https://www.udacity.com/course/intro-to-java-programming--cs046" target="_blank">Link to Course</a>
+                <LI> Udemy - Introduction to Data Structures & Algorithms in Java - <a href="https://www.udemy.com/introduction-to-data-structures-algorithms-in-java/" target="_blank">Link to Course</a>
+                <LI> Coursera - Algorithms, Part 1 - <a href="https://www.coursera.org/course/algs4partI" target="_blank">Link to Course</a>
+                <LI> Coursera - Algorithms, Part 2 - <a href="https://www.coursera.org/course/algs4partII" target="_blank">Link to Course</a>
+            </UL>
+
+            <h3>Projects:</h3>
+            <UL>
+                <LI><a href="{% url 'java_background' %}">The Background Generator</a>
+                <LI><a href="{% url 'java_image_processor' %}">The Bad Image Processor</a>
+            </UL>
+
+{% endblock %}

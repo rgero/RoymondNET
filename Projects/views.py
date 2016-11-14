@@ -6,18 +6,28 @@ def projects(request):
             {'active': "projects",
             }
         )
+def language(request):
+    print request
+    return render(request, request.path[1::] + "/index.html", {'active':'projects'})
 
 def comingsoon(request, input_dic):
     return render(request, 'comingsoon.html', input_dic)
 
 def python(request):
-    return comingsoon(request, {'active': 'projects', 'Header':'Python Projects Coming Soon!'})
+    return language(request)
 
-def csharp(request):
-    return comingsoon(request, {'active': 'projects', 'Header':'C# Projects Coming Soon!'})
     
 def java(request):
-    return comingsoon(request, {'active': 'projects', 'Header':'Java Projects Coming Soon!'})
+    return language(request)
+    
+def csharp(request):
+    return language(request)
+
+def java_background(request):
+    return render(request, 'projects/java/background.html', {'active':'projects'})
+    
+def java_image_processor(request):
+    return render(request, 'projects/java/imageprocessor.html', {'active':'projects'})
     
 def perl(request):
     return comingsoon(request, {'active': 'projects', 'Header':'Perl Projects Coming Soon!'})
