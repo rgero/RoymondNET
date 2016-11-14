@@ -16,20 +16,3 @@ def about(request):
             {'active': "about",
             }
         )
-def projects(request):
-    return render(request, 'personal/projects.html',
-            {'active': "projects",
-            }
-        )
-
-def comingsoon(request):
-    return render(request, 'personal/comingsoon.html',
-            {'active': "None",
-            }
-        )
-
-def comingsoonprojects(request):
-    return render(request, 'personal/comingsoon.html',
-            {'active': "projects",
-            }
-        )

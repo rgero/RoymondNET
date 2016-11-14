@@ -20,4 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('personal.urls')),
     url(r'^(?i)PenaltyTracker/', include('PenaltyTracker.urls')),
+    url(r'^(?i)projects/', include('Projects.urls')),
+    url(r'^(?i)blog/', include('Blog.urls')),
 ]

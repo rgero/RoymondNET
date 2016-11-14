@@ -1,4 +1,4 @@
-{% extends "personal/template.html" %}
+{% extends "template.html" %}
 
 {% block content %}
 {% load staticfiles %}
@@ -9,7 +9,7 @@
 
 <p>To read about how I originally learned the language in question, click the heading</p>
 
-<h3><a href="projects/python/">Python</a></h3>
+<h3><a href="{% url 'python' %}">Python</a></h3>
 <ul>
     <li><a href="/penaltytracker">The Penalty Tracker</a>
     <li>File Renamer
@@ -18,7 +18,7 @@
     <LI>Guitar Notes
 </ul>
 
-<h3><a href="projects/c-sharp/">C#</a></h3>
+<h3><a href="{% url 'c-sharp' %}">C#</a></h3>
 <ul>
     <LI>Selina No
     <LI>File Renamer - GUI
@@ -26,24 +26,24 @@
     <LI>Painbow Road
 </ul>
 
-<h3><a href="projects/java">Java</a><h3>
+<h3><a href="{% url 'java' %}">Java</a></h3>
 <ul>
   <LI>The Background Generator
   <LI>The Bad Image Processor
 </ul>
 
-<h3><a href="projects/perl/">PERL</a></h3>
+<h3><a href="{% url 'perl' %}">PERL</a></h3>
 <ul>
     <LI>Size Comparsion
 </ul>
 
-<h3><a href="projects/android">Android</a></h3>
+<h3><a href="{% url 'android' %}">Android</a></h3>
 <ul>
     <LI>Shooting Time
     <LI>Hiker's Watch
 </ul>
 
-<h3><a href="projects/ios">iOS</a></h3>
+<h3><a href="{% url 'iOS' %}">iOS</a></h3>
 <ul>
     <LI>Shooting Time
     <LI>Hiker's Watch

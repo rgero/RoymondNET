@@ -1,0 +1,13 @@
+from django.conf.urls import url, include
+from . import views
+import PenaltyTracker
+
+urlpatterns = [
+    url(r'^$', views.projects, name="projects"),
+    url(r'^(?i)python$', views.python, name="python"),
+    url(r'^(?i)c-sharp$', views.csharp, name="c-sharp"),
+    url(r'^(?i)java$', views.java, name="java"),
+    url(r'^(?i)perl$', views.perl, name="perl"),
+    url(r'^(?i)android$', views.android, name="android"),
+    url(r'^(?i)ios$', views.iOS, name="iOS"),
+]

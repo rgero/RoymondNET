@@ -26,7 +26,7 @@
 	<div class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="http://www.roymond.net" alt="Roymond.net" class="navbar-brand">Roymond.net</a>
+				<a href="{% url 'index' %}" alt="Roymond.net" class="navbar-brand">Roymond.net</a>
 
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle Navigation</span>
@@ -50,16 +50,16 @@
                         <LI><a href="{% url 'about' %}">About</a></LI>
                     {% endif %}
                     {% if active == "blog" %}
-                        <LI class="active"><a href="{% url 'comingsoon' %}">Blog</a></LI>
+                        <LI class="active"><a href="{% url 'blog' %}">Blog</a></LI>
                     {% else %}
-                        <LI><a href="{% url 'comingsoon' %}">Blog</a></LI>
+                        <LI><a href="{% url 'blog' %}">Blog</a></LI>
                     {% endif %}
                     {% if active == "projects" %}
                         <LI class="active"><a href="{% url 'projects' %}">Projects</a></LI>
                     {% else %}
                         <LI><a href="{% url 'projects' %}">Projects</a></LI>
                     {% endif %}
-                    {% if active == "pent" %}
+                    {% if active == "penaltytracker" %}
                         <LI class="active"><a href="/PenaltyTracker">The Penalty Tracker</a></LI>
                     {% else %}
                         <LI><a href="/PenaltyTracker">The Penalty Tracker</a></LI>
@@ -85,7 +85,7 @@
 
                 </h3>
             </div>
-            {% include "personal/contact.html" %}
+            {% include "contact.html" %}
 	</div>
 
 	<footer class="footer">

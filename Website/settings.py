@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'personal',
+    'Projects.apps.ProjectsConfig',
     'PenaltyTracker.apps.PenaltyTrackerConfig',
     'django.contrib.admin',
     'django.contrib.auth',

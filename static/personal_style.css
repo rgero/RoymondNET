@@ -1,0 +1,83 @@
+@link-color:       @brand-primary;
+@link-hover-color: darken(@link-color, 15%);
+
+body {
+	background-color: #070707;
+	color: #B8DBD9;
+}
+
+.jumbotron
+{ 
+	color:white;
+	background-image: url("images/jumbotron.jpg");
+	width:100%;
+}
+
+
+.contact{
+	background-color: #2F4550;
+	border:1px solid gray;
+	border-radius: 10px;
+	padding:10px;
+}
+
+h3,h4 {
+	text-decoration:underline;
+}
+
+.center {
+	background-color: #2F4550;
+	border:1px solid gray;
+	border-radius: 10px;
+	padding:20px;
+}
+
+.contact a {
+  color: #777;
+  text-decoration: none;
+  font-weight:bold;
+}
+
+.contact a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:hover {
+	color: #000000;
+}
+
+.navbar-inverse{
+	background-color: #2F4550;
+}
+
+.footer{
+	color: darken(#2F4550,75%);
+	font-size:75%;
+	text-align: right;
+}
+
+#strong-white{
+	color: #FFFFFF;
+}
+
+table a, h3 a {
+    color:#B8DBD9;
+    text-decoration:none;
+}
+
+h3 a:hover{
+    color: #FFFFFF;
+    text-decoration:none;
+}
+
+table, td {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 0 10px 0 10px;
+}
+
+
+table a:hover {
+    color: #FFFFFF;
+}
