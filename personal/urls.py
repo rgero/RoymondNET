@@ -20,6 +20,13 @@ import PenaltyTracker
 urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^about.html', views.about, name="about"),
+    url(r'^(?i)projects.html', views.projects, name="projects"),
+    url(r'^(?i)projects/c-sharp', views.comingsoonprojects, name="c-sharp"),
+    url(r'^(?i)projects/python', views.comingsoonprojects, name="python"),
+    url(r'^(?i)projects/java', views.comingsoonprojects, name="java"),
+    url(r'^(?i)projects/perl', views.comingsoonprojects, name="perl"),
+    url(r'^(?i)projects/android', views.comingsoonprojects, name="android"),
+    url(r'^(?i)projects/ios', views.comingsoonprojects, name="ios"),
     url(r'comingsoon.html', views.comingsoon, name="comingsoon"),
 ]
 

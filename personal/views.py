@@ -8,17 +8,28 @@ from django.shortcuts import render_to_response
 def index(request):
     return render(request, 'personal/index.html',
          {'active': None}
-    
+
     )
-    
+
 def about(request):
-    return render(request, 'personal/about.html', 
+    return render(request, 'personal/about.html',
             {'active': "about",
+            }
+        )
+def projects(request):
+    return render(request, 'personal/projects.html',
+            {'active': "projects",
             }
         )
 
 def comingsoon(request):
-    return render(request, 'personal/comingsoon.html', 
+    return render(request, 'personal/comingsoon.html',
             {'active': "None",
+            }
+        )
+
+def comingsoonprojects(request):
+    return render(request, 'personal/comingsoon.html',
+            {'active': "projects",
             }
         )
