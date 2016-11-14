@@ -15,12 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from . import views
-import PenaltyTracker
 
 urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^about.html', views.about, name="about"),
-    url(r'comingsoon.html', views.comingsoon, name="comingsoon"),
 ]
 
 # Personal is the main page.

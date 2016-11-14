@@ -1,6 +1,7 @@
-<html>
-  <head>
-    {% load static %}
+{% extends "template.html" %}
+
+{% block content %}
+{% load staticfiles %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href='{% static "style.css" %}'>
     <link rel="stylesheet" href='{% static "penaltytracker\style.css" %}'>
@@ -30,6 +31,4 @@
         </form>
       </div>
     </div>
-    </center>
-  </body>
-</html>
+{% endblock %}
