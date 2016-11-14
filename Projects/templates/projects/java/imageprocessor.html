@@ -1,0 +1,58 @@
+{% extends "template.html" %}
+
+{% block content %}
+{% load staticfiles %}
+			<h2>The Image Processor</h2>
+            <hr>
+            <center><h3>Quick Facts</h3>
+            <table cellpadding="10px" border="1px">
+                <tr>
+                    <td>GitHub</td>
+                    <td><a href="https://github.com/Roymond35/ImageProcessor">Link to the Repo</a></td>
+                </tr>
+                <tr>
+                    <td>JAR File</td>
+                    <td><a href="http://roymond.net/projects/java/jar_files/BadImageProcessing.jar">Link to the JAR File</a></td>
+                </tr>
+            </table>
+            </center>
+
+            <h3>About the Project</h3>
+            <P>
+            This project was inspired by the fact that people put so much effort into making their pictures look “better” through the use of filters. I’d often catch my friends spending minutes adding these filters to their photos and often the end result just left me wishing I could get the original picture.
+          </P>
+          <P>
+            This led me to an idea. What if there was a program that added these filters to pictures, but rather than intending to make the pictures better, it set out to make them worse.
+          </P>
+          <P>
+            It was a very tongue in cheek project, but some of my friends actually really liked some of the results so I kept working on it to make it a more complete project.
+          </P>
+            <h3>Iterations</h3>
+            <p>
+              This project was pretty much one and done. If I were to continue working on it, I’d definitely would add some more features to it. Right now the biggest flaw that it has is that it is just essentially putting circles over the existing image, so if you have large enough circles you will see a lot of the underlying image in the empty spaces that circles could not fill.
+            </p>
+
+            <h3>Lessons Learned</h3>
+            <UL>
+              <LI>How to make a GUI using JFrame
+              <LI>How to use Source Control within IntelliJ - I regularly use source control, but never within my IDE
+              <LI>How to destribute a java project with a JAR file.
+            </UL>
+
+            <h3>Images</h3>
+            <p>Here are some images of the UI as well as some example results from the Image Processor. In the results, the image on the left is the unedited one, and the image on the right is the result. I've combined them so it is easy to see the difference</p>
+            <p><b>The UI</b></p>
+            <center>
+            <p>
+                <a href="{% static 'projects/java/imageprocessor/UI.png' %}" target="_blank"><img src="{% static 'projects/java/imageprocessor/UI.png' %}" alt="The UI" width=150 height=94></a></td>
+            </p>
+            
+            </center>
+            <p><b>The Results</b></p>
+            <center>
+                <p>
+                    <a href="{% static 'projects/java/imageprocessor/Ling_Example.png' %}" target="_blank"><img src="{% static 'projects/java/imageprocessor/Ling_Example.png' %}" alt="Example Ling" width=150 height=168></a><BR>
+                    <a href="{% static 'projects/java/imageprocessor/BlueAngel_Example.png' %}" target="_blank"><img src="{% static 'projects/java/imageprocessor/BlueAngel_Example.png' %}" alt="Example Blue Angels" width=150 height=186></a><BR>
+                </p>
+            </center>
+{% endblock %}
