@@ -32,7 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'personal',
+    'personal.apps.PersonalConfig',
+    'Blog.apps.BlogConfig',
     'Projects.apps.ProjectsConfig',
     'PenaltyTracker.apps.PenaltyTrackerConfig',
     'django.contrib.admin',
