@@ -1,20 +1,16 @@
-{% extends 'Blog/base.html' %}
+{% extends 'template.html' %}
 
 {% block title %}{{post.title}}{% endblock %}
 
 {% block content %}
 <article>
 <header>
-<h1> {{post.title}} </h1>
-<p>
-Posted on
-<time datetime="{{post.created|date:"c"}}">
-{{post.created|date}}
-</time>
-</p>
+  <h1> {{post.title}} </h1>
 </header>
 <p class="content">
 </p>
 {{post.content|safe}}
 </article>
+<hr/>
+Posted on <time datetime="{{post.created|date:"c"}}">{{post.created|date}}</time>
 {% endblock %}

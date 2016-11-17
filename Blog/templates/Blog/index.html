@@ -1,4 +1,4 @@
-{% extends 'Blog/base.html' %}
+{% extends 'template.html' %}
 
 
 {% block title %} Blog Archive {% endblock %}
@@ -8,10 +8,14 @@
 {% for post in posts %}
 <div class="post">
   <h2>
-    <a href="{% url post.slug %}">
+    <a href="{% url 'postView' post.slug %}">
       {{post.title}}
     </a>
   </h2>
+  <hr>
+  <p>
+    {{post.description}}
+  </p>
   <p>
     Posted on
     <time datetime="{{post.created|date:"c"}}">

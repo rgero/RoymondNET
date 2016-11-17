@@ -7,7 +7,6 @@ def blogIndex(request):
     return render(request, 'Blog/index.html', {'posts':posts})
 
 def postView(request, slug):
-    print slug
     post = get_object_or_404(Post, slug=slug)
     return render(request, 'Blog/post.html', {'post':post})
 

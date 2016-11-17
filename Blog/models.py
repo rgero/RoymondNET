@@ -9,6 +9,7 @@ class Post(models.Model):
     published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey('Blog.Category')
+    description = models.CharField(max_length=255)
 
     class Meta:
         ordering=['-created']
