@@ -7,7 +7,7 @@ body {
 }
 
 .jumbotron
-{ 
+{
 	color:white;
 	background-image: url("images/jumbotron.jpg");
 	width:100%;
@@ -53,7 +53,8 @@ a:hover {
 
 .footer{
 	color: darken(#2F4550,75%);
-	font-size:75%;
+	font-size:50%;
+	padding-top:10px;
 	text-align: right;
 }
 

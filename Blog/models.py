@@ -18,8 +18,10 @@ class Post(models.Model):
         return u'%s' % self.title
 
     def get_absolute_url(self):
-        return reverse('blog.views.post', args=[str(self.slug)])
+        return self.slug
 
 class Category(models.Model):
     title = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
+    def __unicode__(self):
+        return u'%s' % self.title

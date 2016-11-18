@@ -10,6 +10,13 @@ def postView(request, slug):
     post = get_object_or_404(Post, slug=slug)
     return render(request, 'Blog/post.html', {'post':post})
 
-def categories(request, slug):
-    categories = Categories.objects.all()
-    return render(request, 'Blog/category.html', {'categories'})
+def categoryView(request):
+    categories = Category.objects.all()
+    return render(request, 'Blog/category.html', {'categories':categories})
+
+def view_category(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    return render(request, 'Blog/view_category.html', {
+        'category': category,
+        'posts': Post.objects.filter(category=category)[:5]
+    })

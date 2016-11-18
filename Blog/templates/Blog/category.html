@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+{% block head_title %}Viewing category {{ category.title }}{% endblock %}
+{% block title %}{{ category.title }}{% endblock %}
+
+{% block content %}
+    {% if categories %}
+        <ul>
+        {% for post in categories %}
+            <li><a href="{% url 'categoryPostsView' post.slug %}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no categories.</p>
+    {% endif %}
+{% endblock %}
