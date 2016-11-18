@@ -9,22 +9,34 @@
   <a href="{% url 'categoryView' %}">Click here</a> to view the categories of this blog.
 </div>
 {% for post in posts %}
-<div class="post">
-  <h2>
-    <a href="{% url 'postView' post.slug %}">
-      {{post.title}}
-    </a>
-  </h2>
   <hr>
-  <p>
-    {{post.description}}
-  </p>
+  <div class="post">
+    <h2>
+      <a href="{% url 'postView' post.slug %}">
+        {{post.title}}
+      </a>
+    </h2>
+    <div>
+      {{post.content}}
+    </div>
+  </div>
+  <div class="blogTags">
+  {% if post.tags %}
+
+      <b>Tags</b><br>|
+      {% for tag in post.tags.all %}
+          <a href="{% url 'tagPostsView' tag.slug %}">{{ tag.title }}</a> |
+      {% endfor %}
+
+  {% else %}
+      There are no tags.
+  {% endif %}
+  </div>
   <p>
     Posted on
     <time datetime="{{post.created|date:"c"}}">
       {{post.created|date}}
     </time>
   </p>
-</div>
 {% endfor %}
 {% endblock %}

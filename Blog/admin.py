@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Blog.models import Post, Category
+from Blog.models import Post, Category, Tag
 # Register your models here.
 
 class PostAdmin(admin.ModelAdmin):
@@ -14,6 +14,10 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display=['title']
     save_on_top=True
 
+class TagAdmin(admin.ModelAdmin):
+    list_display=['title']
+    save_on_top=True
 
 admin.site.register(Post,PostAdmin)
 admin.site.register(Category,CategoryAdmin)
+admin.site.register(Tag, TagAdmin)

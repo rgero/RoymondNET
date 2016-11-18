@@ -3,6 +3,7 @@
 {% block title %}{{ category.title }}{% endblock %}
 
 {% block content %}
+    Viewing category {{ category.title }}
     {% if categories %}
         <ul>
         {% for post in categories %}

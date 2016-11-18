@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from Blog.models import Post, Category
+from Blog.models import Post, Category, Tag
 
 # Create your views here.
 def blogIndex(request):
@@ -19,4 +19,11 @@ def view_category(request, slug):
     return render(request, 'Blog/view_category.html', {
         'category': category,
         'posts': Post.objects.filter(category=category)[:5]
+    })
+
+def view_tags(request, slug):
+    desiredTag = get_object_or_404(Tag, slug=slug)
+    return render(request, 'Blog/view_tag.html', {
+        'tag': desiredTag,
+        'posts': Post.objects.filter(tags__exact=desiredTag)
     })

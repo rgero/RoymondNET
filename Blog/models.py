@@ -10,6 +10,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey('Blog.Category')
     description = models.CharField(max_length=255)
+    tags = models.ManyToManyField('Blog.Tag')
 
     class Meta:
         ordering=['-created']
@@ -21,6 +22,12 @@ class Post(models.Model):
         return self.slug
 
 class Category(models.Model):
+    title = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=100, db_index=True)
+    def __unicode__(self):
+        return u'%s' % self.title
+
+class Tag(models.Model):
     title = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
     def __unicode__(self):

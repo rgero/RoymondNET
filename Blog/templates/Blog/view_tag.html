@@ -1,9 +1,9 @@
 {% extends 'template.html' %}
-{% block head_title %}Viewing category {{ category.title }}{% endblock %}
-{% block title %}{{ category.title }}{% endblock %}
+{% block head_title %}Viewing tag {{ tag.title }}{% endblock %}
+{% block title %}{{ tag.title }}{% endblock %}
 
 {% block content %}
-    Viewing category {{ category.title }}
+    <h2>Posts containing the {{tag.title}} tag</h2>
     {% if posts %}
         <ul>
         {% for post in posts %}
