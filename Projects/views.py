@@ -4,36 +4,37 @@ from django.shortcuts import render
 def projects(request):
     return render(request, 'projects/index.html',
             {'active': "projects",
+             'jumbotron':"Projects"
             }
         )
-def language(request):
-    print request
-    return render(request, request.path[1::] + "/index.html", {'active':'projects'})
+def language(request,renderDic):
+    renderDic['active'] = 'projects'
+    return render(request, request.path[1::] + "/index.html", renderDic)
 
 def comingsoon(request, input_dic):
     return render(request, 'comingsoon.html', input_dic)
 
 def python(request):
-    return language(request)
+    return language(request, {'jumbotron':"Python Projects"})
 
-    
+
 def java(request):
-    return language(request)
-    
+    return language(request,{'jumbotron':"Java Projects"})
+
 def csharp(request):
-    return language(request)
+    return language(request,{'jumbotron':"C# Projects"})
 
 def java_background(request):
-    return render(request, 'projects/java/background.html', {'active':'projects'})
-    
+    return render(request, 'projects/java/background.html', {'active':'projects','jumbotron':"The Background Generator"})
+
 def java_image_processor(request):
-    return render(request, 'projects/java/imageprocessor.html', {'active':'projects'})
-    
+    return render(request, 'projects/java/imageprocessor.html', {'active':'projects','jumbotron':"The Image Processor"})
+
 def perl(request):
-    return comingsoon(request, {'active': 'projects', 'Header':'Perl Projects Coming Soon!'})
-    
+    return comingsoon(request, {'active': 'projects', 'Header':'Coming Soon!','jumbotron':"PERL Projects"})
+
 def android(request):
-    return comingsoon(request, {'active': 'projects', 'Header':'Android Projects Coming Soon!'})
-    
+    return comingsoon(request, {'active': 'projects', 'Header':'Coming Soon!','jumbotron':"Android Projects"})
+
 def iOS(request):
-    return comingsoon(request, {'active': 'projects', 'Header':'iOS Projects Coming Soon!'})
+    return comingsoon(request, {'active': 'projects', 'Header':'Coming Soon!','jumbotron':"iOS Projects"})

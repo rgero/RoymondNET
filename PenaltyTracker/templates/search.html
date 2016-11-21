@@ -2,17 +2,10 @@
 
 {% block content %}
 {% load staticfiles %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href='{% static "style.css" %}'>
     <link rel="stylesheet" href='{% static "penaltytracker\style.css" %}'>
-    <title>
-      Search the Penalty Tracker
-    </title>
   </head>
   <body>
-    <h1>The Penalty Tracker</h1>
-    <center>
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-12">
       <p>Welcome to the new 2016-17 Penalty Tracker! In this version, I really wanted to focus on loading times. Towards the end
        of last season, the page was taking seconds to fully load even on a rather faster internet connection. Because of this, I changed
        several things. The first was introducing this search page.</p>
@@ -21,6 +14,7 @@
        and you will be taken to the results page.</P>
     </div>
     <div class="col-md-12">
+      <center>
       <div class="form">
         <form action="printresults/" method="post">
 
@@ -29,6 +23,7 @@
 
           <input type="submit" value="Search" />
         </form>
+        </center>
       </div>
     </div>
 {% endblock %}

@@ -22,7 +22,9 @@ def form_test(request):
     else:
         form = PenaltySearchForm()
 
-    return render(request, 'search.html', {'active': "penaltytracker",'form': form})
+    return render(request, 'search.html', { 'active': "penaltytracker",
+                                            'form': form, 
+                                            'jumbotron':"The Penalty Tracker"})
 
 def print_results(request):
   if request.method != 'POST':

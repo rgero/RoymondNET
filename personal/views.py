@@ -13,6 +13,7 @@ def index(request):
 
 def about(request):
     return render(request, 'personal/about.html',
-            {'active': "about",
+            {   'active': "about",
+                'jumbotron': "About Me",
             }
         )
