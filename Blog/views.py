@@ -8,7 +8,7 @@ def blogIndex(request):
 
 def postView(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    return render(request, 'Blog/post.html', {'post':post,'active': "blog",'jumbotron': "The Blog"})
+    return render(request, 'Blog/post.html', {'post':post,'active': "blog",'jumbotron': post.title})
 
 def categoryView(request):
     categories = Category.objects.all()

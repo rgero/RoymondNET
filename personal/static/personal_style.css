@@ -7,7 +7,7 @@ body {
 }
 
 .jumbotron
-{ 
+{
 	color:white;
 	background-image: url("images/jumbotron.jpg");
 	width:100%;
@@ -80,4 +80,31 @@ table, td {
 
 table a:hover {
     color: #FFFFFF;
+}
+
+.blogTags{
+	padding-top:10px;
+}
+
+.post{
+	border-radius:5px;
+	padding:15px;
+	background-color: #445E6A;
+}
+
+.post a:link {
+	color: #FFFFFF;
+}
+
+#blogLink {
+	color: #FFFFFF;
+}
+
+.titleLink {
+	color: #FFFFFF;
+}
+
+.postedOn{
+	font-size:66%;
+	text-align: right;
 }

@@ -1,28 +1,27 @@
 {% extends 'template.html' %}
+{% load markdown_deux_tags %}
 
 {% block title %}{{post.title}}{% endblock %}
 
 {% block content %}
-<article>
-  <header>
-    <h1> {{post.title}} </h1>
-  </header>
-  <p class="content">
-  </p>
-  {{post.content|safe}}
-</article>
+<div class="post">
+  <div>
+        {{post.content|markdown}}
+  </div>
+  <div class="postedOn">
+    Posted on <time datetime="{{post.created|date:"c"}}">{{post.created|date}}</time>
+  </div>
+</div>
 <div class="blogTags">
 {% if post.tags %}
-
-    <b>Tags</b><br>|
+    <b>Tags: </b>
     {% for tag in post.tags.all %}
-        <a href="{% url 'tagPostsView' tag.slug %}">{{ tag.title }}</a> |
+        <a href="{% url 'tagPostsView' tag.slug %}" id="blogLink">{{ tag.title }}</a> 
     {% endfor %}
 
 {% else %}
     There are no tags.
 {% endif %}
 </div>
-<hr/>
-Posted on <time datetime="{{post.created|date:"c"}}">{{post.created|date}}</time>
+
 {% endblock %}
