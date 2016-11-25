@@ -66,6 +66,7 @@
                         <LI><a href="/PenaltyTracker">The Penalty Tracker</a></LI>
                     {% endif %}
 				</ul>
+          {% include "contactMenu.html" %}
 			</div>
 		</div>
 	</div>
@@ -78,15 +79,10 @@
                 <center><h1>{{jumbotron|default:"Welcome to Roymond.net"}}</h1></center>
             </div>
 
-			<div class="col-md-10 center">
+			<div class="col-md-12 center">
                 {% block content %}
                 {% endblock %}
-
-                <h3>
-
-                </h3>
       </div>
-      {% include "contact.html" %}
       <div class="row">
         <div class="col-md-12 footer">
         			<p id="timeStamp">Last Modified on</p>
