@@ -43,27 +43,22 @@ def getFullNames(i):
   return returnList
 
 def listToSQLString(entry):
-    resultString = ""
-
-    for i in range(0, len(entry)-1):
-      if entry[i] != "":
-        result
-
+    resultString = "("
     for i in entry:
       if i != "":
-        resultString += "'" + i + "' "
-    resultString = resultString[0:len(resultString)-1] + ")"
+        resultString += "'" + i + "', "
+    resultString = resultString[0:len(resultString)-2] + ")"
     return resultString
 
 
 def constructWHERE(entry):
   '''Entry is the search form dictionary'''
   potentialMultiItems = ["playerName","teamName","opponentTeam","penalty","refs"]
+
   listOfItems = []
   for i in potentialMultiItems:
       if len(entry[i]) >= 1 and entry[i][0]!="":
-        for j in entry[i]:
-          listOfItems.append(i + " LIKE '%" + j + "%' " )
+          listOfItems.append(i + " IN " + listToSQLString(entry[i]) + " " )
   if entry["homeAway"] == "Home":
       listOfItems.append("homeAway=0")
   elif entry["homeAway"] == "Away":
@@ -82,6 +77,7 @@ def constructWHERE(entry):
       where_string += listOfItems[j] + " AND "
   if len(listOfItems) >= 1:
     where_string += listOfItems[len(listOfItems)-1]
+  print where_string
   return where_string
 
 
