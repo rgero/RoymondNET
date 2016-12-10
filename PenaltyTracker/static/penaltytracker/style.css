@@ -81,6 +81,11 @@ input {
   background-color: #d1d1d1;
 }
 
+button {
+  color:black;
+  background-color: #d1d1d1;
+}
+
 .form{
   width:60%;
   border-radius:10px;
