@@ -37,12 +37,17 @@ def getFullNames(i):
                 "WSH":"Washington Capitals",
                 "WPG":"Winnipeg Jets"}
   returnList = []
-
   for entry in i:
     returnList.append(teamList[entry])
   return returnList
 
-def listToSQLString(entry):
+def listToSQLIncludeString(entry):
+    ''' Input:
+            entry - a list of items that should be joined together for the query
+
+        Used:
+            This is used to parse the team names.
+    '''
     resultString = "("
     for i in entry:
       if i != "":
@@ -54,8 +59,14 @@ def listToSQLString(entry):
 
 
 def constructWHERE(entry):
-  '''Entry is the search form dictionary'''
-  potentialMultiItems = ["teamName","opponentTeam"]
+  ''' Inputs:
+        Entry  - This is the user entered data from the search form passed as a dictionary
+               - NOTE: Player Names, Penalties, and Refs are ALREADY SEPARATED into an array
+                       based on the regular expression shown in getList.
+      Returns:
+        A string used for the query.
+  '''
+  teamList = ["teamName","opponentTeam"]
   listOfItems = []
 
   playerEntry = entry["playerName"]
@@ -86,13 +97,18 @@ def constructWHERE(entry):
       penaltySearchString += " penalty LIKE '%" + penaltyEntry[len(refEntry)-1] + "%')"
       listOfItems.append(penaltySearchString)
 
-  for i in potentialMultiItems:
+  #Parsing the team names
+  for i in teamList:
       if len(entry[i]) >= 1 and entry[i][0]!="":
-          listOfItems.append(i + " IN " + listToSQLString(entry[i]) + " " )
+          listOfItems.append(i + " IN " + listToSQLIncludeString(entry[i]) + " " )
+
+  # Parsing Home vs Away Status
   if entry["homeAway"] == "Home":
       listOfItems.append("homeAway=0")
   elif entry["homeAway"] == "Away":
       listOfItems.append("homeAway=1")
+
+  # Parsing the Game Dates as a "Between" statement.
   if entry["startDate"] != None and entry["endDate"] != None:
       listOfItems.append("gameDate BETWEEN '" + entry["startDate"].strftime("%m/%d/%Y") + "' AND '" \
       + (entry["endDate"]+datetime.timedelta(days=1)).strftime("%m/%d/%Y") + "'")
@@ -102,6 +118,10 @@ def constructWHERE(entry):
   if entry["startDate"] != None and entry["endDate"] == None:
       listOfItems.append("gameDate BETWEEN '" + entry["startDate"].strftime("%m/%d/%Y") + "' AND '" \
       + (entry["startDate"]+datetime.timedelta(days=1)).strftime("%m/%d/%Y") + "'")
+
+  # Constructing the Where statement based on everything listed above.
+  # All of the search terms must be matched, therefore "AND" is selected. The unique cases where it expands that AND statement
+  # are handled above.
   where_string = ""
   for j in range(0, len(listOfItems)-1):
       where_string += listOfItems[j] + " AND "
@@ -112,6 +132,10 @@ def constructWHERE(entry):
 
 
 def performSearch(query):
+  ''' This is the function that is going to perform the actual query against the database.
+      It is going to utilize the constructWHERE function to figure out what exactly the user is looking for
+      OUTPUT: results - the SQL results from the query.
+  '''
   dblocation = os.path.join(os.getcwd(), "PenaltyTracker")
   dblocation = os.path.join(dblocation, "static")
   dblocation = os.path.join(dblocation, "penaltytracker")
