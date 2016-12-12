@@ -107,18 +107,15 @@ def constructWHERE(entry):
       where_string += listOfItems[j] + " AND "
   if len(listOfItems) >= 1:
     where_string += listOfItems[len(listOfItems)-1]
-  print where_string
   return where_string
 
 
 
 def performSearch(query):
-  print(os.getcwd())
   dblocation = os.path.join(os.getcwd(), "PenaltyTracker")
   dblocation = os.path.join(dblocation, "static")
   dblocation = os.path.join(dblocation, "penaltytracker")
   dblocation = os.path.join(dblocation, "season.db")
-  print os.path.isfile(dblocation)
 
   conn = sqlite3.connect(dblocation)
   cursor = conn.cursor()
@@ -130,9 +127,5 @@ def performSearch(query):
       executionString += "WHERE " + where_string
 
   executionString += " ORDER BY gameDate"
-
-  print executionString
-
   results = cursor.execute(executionString).fetchall()
-  print( len(results) )
   return results
