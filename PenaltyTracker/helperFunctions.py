@@ -113,11 +113,10 @@ def constructWHERE(entry):
       listOfItems.append("gameDate BETWEEN '" + entry["startDate"].strftime("%m/%d/%Y") + "' AND '" \
       + (entry["endDate"]+datetime.timedelta(days=1)).strftime("%m/%d/%Y") + "'")
   if entry["startDate"] == None and entry["endDate"] != None:
-      listOfItems.append("gameDate BETWEEN '" + entry["endDate"].strftime("%m/%d/%Y") + "' AND '" \
-      + (entry["endDate"]+datetime.timedelta(days=1)).strftime("%m/%d/%Y") + "'")
+      listOfItems.append("gameDate <= '" + entry["endDate"].strftime("%m/%d/%Y") + "'")
   if entry["startDate"] != None and entry["endDate"] == None:
       listOfItems.append("gameDate BETWEEN '" + entry["startDate"].strftime("%m/%d/%Y") + "' AND '" \
-      + (entry["startDate"]+datetime.timedelta(days=1)).strftime("%m/%d/%Y") + "'")
+      + (datetime.date.today()).strftime("%m/%d/%Y") + "'")
 
   # Constructing the Where statement based on everything listed above.
   # All of the search terms must be matched, therefore "AND" is selected. The unique cases where it expands that AND statement
