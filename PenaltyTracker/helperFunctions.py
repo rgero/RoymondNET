@@ -111,7 +111,7 @@ def constructWHERE(entry):
   # Parsing the Game Dates as a "Between" statement.
   if entry["startDate"] != None and entry["endDate"] != None:
       listOfItems.append("gameDate BETWEEN '" + entry["startDate"].strftime("%m/%d/%Y") + "' AND '" \
-      + (entry["endDate"]+datetime.timedelta(days=1)).strftime("%m/%d/%Y") + "'")
+      + (entry["endDate"]).strftime("%m/%d/%Y") + "'")
   if entry["startDate"] == None and entry["endDate"] != None:
       listOfItems.append("gameDate <= '" + entry["endDate"].strftime("%m/%d/%Y") + "'")
   if entry["startDate"] != None and entry["endDate"] == None:
