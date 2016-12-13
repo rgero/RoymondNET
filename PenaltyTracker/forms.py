@@ -2,6 +2,8 @@ from django import forms
 from django.forms.widgets import *
 from datetime import datetime
 
+YEAR_CHOICES = ('2016', '2017')
+
 class PenaltySearchForm(forms.Form):
   teamList = [("ANA","Anaheim Ducks"),
               ("ARI","Arizona Coyotes"),
@@ -38,6 +40,6 @@ class PenaltySearchForm(forms.Form):
   opponent = forms.MultipleChoiceField(label="Opponent", choices=teamList, required=False)
   homeAway = forms.ChoiceField(label="Home or Away",choices=[("Either","Either"),("Home","Home"),("Away","Away")], required=False)
   penalty = forms.CharField(label="Penalty", max_length=100, required=False)
-  startDate = forms.DateField(label="Start Date", required=False, input_formats=['%Y-%m-%d'], help_text="Format: YYYY-MM-DD")
-  endDate = forms.DateField(label="End Date", required=False, input_formats=['%Y-%m-%d'], help_text="Format: YYYY-MM-DD")
+  startDate = forms.DateField(label="Start Date", required=False, widget=forms.SelectDateWidget(years=YEAR_CHOICES))
+  endDate = forms.DateField(label="End Date", required=False, widget=forms.SelectDateWidget(years=YEAR_CHOICES))
   refs = forms.CharField(label="Referee's Name", max_length=200, required=False)
