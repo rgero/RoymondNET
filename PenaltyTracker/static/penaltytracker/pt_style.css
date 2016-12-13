@@ -56,5 +56,9 @@ table {
 }
 
 #userInputTerms{
+  border=1px;
+}
+
+#userData{
   display:none;
 }

@@ -37,17 +37,18 @@
 			<div id="inputData">
 				To see the terms that you searched, <a href="#" id="inputTerms">Click here</a><p>
 				{% if inputData %}
-					<table id="userInputTerms">
-						{% if inputData.playerName %}<tr><td>Player Names</td><td>{{ inputData.playerName }}</td></tr>{% endif %}
-						{% if inputData.playerTeam %}<tr><td>Team Names</td><td>{{ inputData.playerTeam }}</td></tr>{% endif %}
-						{% if inputData.opponent %}<tr><td>Opponent Team Names</td><td>{{ inputData.opponent }}</td></tr>{% endif %}
-						{% if inputData.homeAway %}<tr><td>Home/Away Status</td><td>{{ inputData.homeAway }}</td></tr>{% endif %}
-						{% if inputData.penalty %}<tr><td>Penalties</td><td>{{ inputData.penalty }}</td></tr>{% endif %}
-						{% if inputData.startDate %}<tr><td>Start Date</td><td>{{ inputData.startDate }}</td></tr>{% endif %}
-						{% if inputData.endDate %}<tr><td>End Date</td><td>{{ inputData.endDate }}</td></tr>{% endif %}
-						{% if inputData.refs %}<tr><td>Referees</td><td>{{ inputData.refs }}</td></tr>{% endif %}
-					</table>
-					<br>
+					<div id="userData">
+						<table id="userInputTerms">
+							{% if inputData.playerName %}<tr><td><B>Player Names</B></td><td>{{ inputData.playerName }}</td></tr>{% endif %}
+							{% if inputData.playerTeam %}<tr><td><B>Team Names</B></td><td>{{ inputData.playerTeam }}</td></tr>{% endif %}
+							{% if inputData.opponent %}<tr><td><B>Opponent Team Names</B></td><td>{{ inputData.opponent }}</td></tr>{% endif %}
+							{% if inputData.homeAway %}<tr><td><B>Home/Away Status</B></td><td>{{ inputData.homeAway }}</td></tr>{% endif %}
+							{% if inputData.penalty %}<tr><td><B>Penalties</B></td><td>{{ inputData.penalty }}</td></tr>{% endif %}
+							{% if inputData.startDate %}<tr><td><B>Start Date</B></td><td>{{ inputData.startDate }}</td></tr>{% endif %}
+							{% if inputData.endDate %}<tr><td><B>End Date</B></td><td>{{ inputData.endDate }}</td></tr>{% endif %}
+							{% if inputData.refs %}<tr><td><B>Referees</B></td><td>{{ inputData.refs }}</td></tr>{% endif %}
+						</table>
+					</div>
 				{% endif %}
 			</div>
 		<table id="penaltyTable">
@@ -117,8 +118,7 @@
 			};
 
 			document.getElementById("inputTerms").onclick = function(){
-				alert("Hello!");
-				$("#userInputTerms").css("display","inline");
+				$("#userData").css("display","inline");
 			}
 
 		</script>
