@@ -23,7 +23,7 @@ def form_test(request):
         form = PenaltySearchForm()
 
     return render(request, 'search.html', { 'active': "penaltytracker",
-                                            'form': form, 
+                                            'form': form,
                                             'jumbotron':"The Penalty Tracker"})
 
 def print_results(request):
@@ -53,6 +53,9 @@ def print_results(request):
             "endDate": endDate,
             "refs": refs}
 
+    cleanedData["playerTeam"] = ", ".join( playerTeam )
+    cleanedData["opponent"] = ", ".join( opponent )    
+
     queryResults = performSearch(Data)
 
-    return render(request, 'results.html', {"data":queryResults, "time":datetime.date.today()})
+    return render(request, 'results.html', {"data":queryResults, "time":datetime.date.today(), "inputData":cleanedData})
