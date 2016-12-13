@@ -16,14 +16,14 @@
     <div class="col-md-12">
       <center>
       <div class="form">
-        <form action="printresults/" method="post">
+        <form action="/PenaltyTracker/" method="post">
 
           {% csrf_token %}
           <table>{{ form.as_table }}</table>
           <br>
-          <input type="submit" value="Search" /> <button type="reset" value="Reset">Reset</button>
+          <input type="submit" value="Search" />
         </form>
-        </center>
+      </center>
       </div>
     </div>
 {% endblock %}
