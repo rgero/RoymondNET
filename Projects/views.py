@@ -15,7 +15,7 @@ def comingsoon(request, input_dic):
     return render(request, 'comingsoon.html', input_dic)
 
 def python(request):
-    return language(request, {'active':'projects','jumbotron':"Python Projects"})
+    return language(request, {'jumbotron':"Python Projects"})
 
 def python_guitar_notes(request):
     return render(request, 'projects/python/guitar-notes.html', {'active':'projects','jumbotron':"Guitar Notes"})
@@ -25,6 +25,9 @@ def java(request):
 
 def csharp(request):
     return language(request,{'jumbotron':"C# Projects"})
+
+def csharp_selina(request):
+    return render(request, 'projects/c-sharp/selina-no.html', {'active':'projects','jumbotron':"Selina No!"})
 
 def java_background(request):
     return render(request, 'projects/java/background.html', {'active':'projects','jumbotron':"The Background Generator"})
