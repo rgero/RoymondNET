@@ -15,8 +15,10 @@ def comingsoon(request, input_dic):
     return render(request, 'comingsoon.html', input_dic)
 
 def python(request):
-    return language(request, {'jumbotron':"Python Projects"})
+    return language(request, {'active':'projects','jumbotron':"Python Projects"})
 
+def python_guitar_notes(request):
+    return render(request, 'projects/python/guitar-notes.html', {'active':'projects','jumbotron':"Guitar Notes"})
 
 def java(request):
     return language(request,{'jumbotron':"Java Projects"})

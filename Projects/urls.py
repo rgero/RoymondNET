@@ -5,6 +5,7 @@ import PenaltyTracker
 urlpatterns = [
     url(r'^$', views.projects, name="projects"),
     url(r'^(?i)python$', views.python, name="python"),
+    url(r'^(?i)python/guitar-notes', views.python_guitar_notes, name="python_guitar_notes"),
     url(r'^(?i)c-sharp$', views.csharp, name="c-sharp"),
     url(r'^(?i)java$', views.java, name="java"),
     url(r'^(?i)java/background$', views.java_background, name="java_background"),
