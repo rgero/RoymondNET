@@ -29,6 +29,9 @@ def csharp(request):
 def csharp_selina(request):
     return render(request, 'projects/c-sharp/selina-no.html', {'active':'projects','jumbotron':"Selina No!"})
 
+def csharp_painbow(request):
+    return render(request, 'projects/c-sharp/painbow-road.html', {'active':'projects','jumbotron':"Painbow Road"})
+
 def java_background(request):
     return render(request, 'projects/java/background.html', {'active':'projects','jumbotron':"The Background Generator"})
 
