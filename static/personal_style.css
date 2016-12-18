@@ -108,3 +108,12 @@ table a:hover {
 	font-size:66%;
 	text-align: right;
 }
+
+.indented {
+	margin-left: 2em;
+}
+
+.painbow-list{
+	text-decoration: none;
+	color: #54948F;
+}
