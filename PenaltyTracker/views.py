@@ -23,7 +23,6 @@ def form_test(request):
           penalty = getList(cleanedData["penalty"])
           startDate = cleanedData["startDate"]
           endDate = cleanedData["endDate"]
-          refs = getList(cleanedData["refs"])
 
           Data = {"playerName":playerNames,
                   "teamName": playerTeam,
@@ -31,8 +30,7 @@ def form_test(request):
                   "homeAway": homeAway,
                   "penalty": penalty,
                   "startDate": startDate,
-                  "endDate": endDate,
-                  "refs": refs}
+                  "endDate": endDate}
 
           cleanedData["playerTeam"] = ", ".join( playerTeam )
           cleanedData["opponent"] = ", ".join( opponent )

@@ -46,7 +46,6 @@
 							{% if inputData.penalty %}<tr><td><B>Penalties</B></td><td>{{ inputData.penalty }}</td></tr>{% endif %}
 							{% if inputData.startDate %}<tr><td><B>Start Date</B></td><td>{{ inputData.startDate }}</td></tr>{% endif %}
 							{% if inputData.endDate %}<tr><td><B>End Date</B></td><td>{{ inputData.endDate }}</td></tr>{% endif %}
-							{% if inputData.refs %}<tr><td><B>Referees</B></td><td>{{ inputData.refs }}</td></tr>{% endif %}
 						</table>
 					</div>
 				{% endif %}
@@ -60,7 +59,6 @@
 					<th id="header_penaltyDate">Date</th>
 					<th id="header_opponentName">Opponent</th>
 					<th id="header_location">H/A</th>
-					<th id="header_referees">Refs</th></tr>
 				</tr>
 			</thead>
 			<tbody>
@@ -75,7 +73,6 @@
 							{% if row.6 == 1 %}Away{% elif row.6 == 0 %}Home{% endif %}
 
 						</td>
-            <td>{{ row.7 }}</td>
           </tr>
         {% endfor %}
 			</tbody>

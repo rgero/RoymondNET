@@ -70,7 +70,6 @@ def constructWHERE(entry):
   listOfItems = []
 
   playerEntry = entry["playerName"]
-  refEntry = entry["refs"]
   penaltyEntry = entry["penalty"]
 
   #Player Name Parsing
@@ -80,14 +79,6 @@ def constructWHERE(entry):
           playerSearchString += " playerName LIKE '%" + playerEntry[i] + "%' OR "
       playerSearchString += " playerName LIKE '%" + playerEntry[len(playerEntry)-1] + "%')"
       listOfItems.append(playerSearchString)
-
-  #Ref Name Parsing
-  if len(refEntry) >= 1 and refEntry[0] != "":
-      refSearchString = "("
-      for i in range(0, len(refEntry)-1):
-          refSearchString += " refs LIKE '%" + refEntry[i] + "%' OR "
-      refSearchString += " refs LIKE '%" + refEntry[len(refEntry)-1] + "%')"
-      listOfItems.append(refSearchString)
 
   #Penalty Parsing
   if len(penaltyEntry) >= 1 and penaltyEntry[0] != "":

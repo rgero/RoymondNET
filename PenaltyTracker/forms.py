@@ -42,4 +42,3 @@ class PenaltySearchForm(forms.Form):
   penalty = forms.CharField(label="Penalty", max_length=100, required=False)
   startDate = forms.DateField(label="Start Date", required=False, widget=forms.SelectDateWidget(years=YEAR_CHOICES))
   endDate = forms.DateField(label="End Date", required=False, widget=forms.SelectDateWidget(years=YEAR_CHOICES))
-  refs = forms.CharField(label="Referee's Name", max_length=200, required=False)
