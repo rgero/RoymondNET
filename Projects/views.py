@@ -38,6 +38,9 @@ def java_background(request):
 def java_image_processor(request):
     return render(request, 'projects/java/imageprocessor.html', {'active':'projects','jumbotron':"The Image Processor"})
 
+def java_guitar_trainer(request):
+    return comingsoon(request, {"Header":"Coming Soon: The Guitar Trainer"})
+
 def perl(request):
     return comingsoon(request, {'active': 'projects', 'Header':'Coming Soon!','jumbotron':"PERL Projects"})
 

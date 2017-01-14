@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^(?i)java$', views.java, name="java"),
     url(r'^(?i)java/background$', views.java_background, name="java_background"),
     url(r'^(?i)java/imageprocessor$', views.java_image_processor, name="java_image_processor"),
+    url(r'^(?i)java/guitar_trainer$', views.java_guitar_trainer, name="java_guitar_trainer"),
     url(r'^(?i)perl$', views.perl, name="perl"),
     url(r'^(?i)android$', views.android, name="android"),
     url(r'^(?i)ios$', views.iOS, name="iOS"),
