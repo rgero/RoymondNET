@@ -6,7 +6,8 @@ def projects(request):
             {'active': "projects",
              'jumbotron':"Projects"
             }
-        )
+    )
+
 def language(request,renderDic):
     renderDic['active'] = 'projects'
     return render(request, request.path[1::] + "/index.html", renderDic)
@@ -15,37 +16,100 @@ def comingsoon(request, input_dic):
     return render(request, 'comingsoon.html', input_dic)
 
 def python(request):
-    return language(request, {'pageTitle':"Python Projects - Roymond.NET", 'jumbotron':"Python Projects", 'active':'projects'})
+    renderDic = {
+        'pageTitle':"Python Projects - Roymond.NET",
+        'jumbotron':"Python Projects",
+        'active':'projects'
+    }
+    return language(request, renderDic )
 
 def python_guitar_notes(request):
-    return render(request, 'projects/python/guitar-notes.html', {'active':'projects','jumbotron':"Guitar Notes", "pageTitle":"Guitar Notes - Roymond.net"})
+    renderDic = {
+        'pageTitle':"Guitar Notes - Roymond.NET",
+        'jumbotron':"Guitar Notes",
+        'active':'projects'
+    }
+    return render(request, 'projects/python/guitar-notes.html', renderDic)
 
 def java(request):
-    return language(request,{'pageTitle':"Java Projects - Roymond.NET", 'jumbotron':"Java Projects", 'active':'projects'})
+    renderDic = {
+        'pageTitle':"Java Projects - Roymond.NET",
+        'jumbotron':"Java Projects",
+        'active':'projects'
+    }
+    return language(request,renderDic)
 
 def csharp(request):
-    return language(request,{'pageTitle':"C# Projects - Roymond.NET", 'jumbotron':"C# Projects"})
+    renderDic = {
+        'pageTitle':"C# Projects - Roymond.NET",
+        'jumbotron':"C# Projects",
+        'active':'projects'
+    }
+    return language(request, renderDic)
 
 def csharp_selina(request):
-    return render(request, 'projects/c-sharp/selina-no.html', {'active':'projects','jumbotron':"Selina No!", "pageTitle":"Selina No! - Roymond.net"})
+    renderDic = {
+        'pageTitle':"Selina No! - Roymond.NET",
+        'jumbotron':"Selina No!",
+        'active':'projects'
+    }
+    return render(request, 'projects/c-sharp/selina-no.html', renderDic)
 
 def csharp_painbow(request):
-    return render(request, 'projects/c-sharp/painbow-road.html', {'active':'projects','jumbotron':"Painbow Road", "pageTitle":"Painbow Road - Roymond.net"})
+    renderDic = {
+        'pageTitle':"Painbow Road - Roymond.NET",
+        'jumbotron':"Painbow Road",
+        'active':'projects'
+    }
+    return render(request, 'projects/c-sharp/painbow-road.html', renderDic)
 
 def java_background(request):
-    return render(request, 'projects/java/background.html', {'active':'projects','jumbotron':"The Background Generator", "pageTitle":"The Background Generator - Roymond.net"})
+    renderDic = {
+        'pageTitle':"The Background Generator - Roymond.NET",
+        'jumbotron':"The Background Generator",
+        'active':'projects'
+    }
+    return render(request, 'projects/java/background.html', renderDic)
 
 def java_image_processor(request):
-    return render(request, 'projects/java/imageprocessor.html', {'active':'projects','jumbotron':"The Image Processor", "pageTitle":"The Image Processor- Roymond.net"})
+    renderDic = {
+        'pageTitle':"The Bad Image Processor - Roymond.NET",
+        'jumbotron':"The Bad Image Processor",
+        'active':'projects'
+    }
+    return render(request, 'projects/java/imageprocessor.html', renderDic)
 
 def java_guitar_trainer(request):
-    return render(request, 'projects/java/guitar-trainer.html', {'active':'projects','jumbotron':"The Guitar Trainer", "pageTitle":"The Guitar Trainer - Roymond.net"})
+    renderDic = {
+        'pageTitle':"The Guitar Trainer - Roymond.NET",
+        'jumbotron':"The Guitar Trainer",
+        'active':'projects'
+    }
+    return render(request, 'projects/java/guitar-trainer.html', renderDic)
 
 def perl(request):
-    return comingsoon(request, {'active': 'projects', 'Header':'Coming Soon!','jumbotron':"PERL Projects", "pageTitle":"PERL Projects - Roymond.net"})
+    renderDic = {
+        'pageTitle':"PERL Projects - Roymond.NET",
+        'jumbotron':"PERL Projects",
+        'Header': "Coming Soon!",
+        'active':'projects'
+    }
+    return comingsoon(request, renderDic)
 
 def android(request):
-    return comingsoon(request, {'active': 'projects', 'Header':'Coming Soon!','jumbotron':"Android Projects", "pageTitle":"Android Projects - Roymond.net"})
+    renderDic = {
+        'pageTitle':"PERL Projects - Roymond.NET",
+        'jumbotron':"PERL Projects",
+        'Header': "Coming Soon!",
+        'active':'projects'
+    }
+    return comingsoon(request, renderDic)
 
 def iOS(request):
-    return comingsoon(request, {'active': 'projects', 'Header':'Coming Soon!','jumbotron':"iOS Projects", "pageTitle":"iOS Projects- Roymond.net"})
+    renderDic = {
+        'pageTitle':"PERL Projects - Roymond.NET",
+        'jumbotron':"PERL Projects",
+        'Header': "Coming Soon!",
+        'active':'projects'
+    }
+    return comingsoon(request, renderDic)
