@@ -42,6 +42,12 @@ def form_test(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         formData = PenaltySearchForm()
-    return render(request, 'search.html', { 'active': "penaltytracker",
-                                            'form': formData,
-                                            'jumbotron':"The Penalty Tracker"})
+
+    # Generating the Dictionary:
+    renderDic = {
+        'active': "penaltytracker",
+        'form': formData,
+        'jumbotron':"The Penalty Tracker",
+        'pageTitle': "The Penalty Tracker - Roymond.net"
+    }
+    return render(request, 'search.html', renderDic)
