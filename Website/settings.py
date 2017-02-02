@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'personal.apps.PersonalConfig',
     'Projects.apps.ProjectsConfig',
     'PenaltyTracker.apps.PenaltyTrackerConfig',
+    'GuitarTrainer.apps.GuitartrainerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

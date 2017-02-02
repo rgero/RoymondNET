@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^', include('personal.urls')),
     url(r'^(?i)PenaltyTracker/', include('PenaltyTracker.urls'), name="ThePenaltyTracker"),
     url(r'^(?i)projects/', include('Projects.urls')),
+    url(r'^(?i)GuitarTrainer', include('GuitarTrainer.urls'), name="GuitarTrainer")
 ]
