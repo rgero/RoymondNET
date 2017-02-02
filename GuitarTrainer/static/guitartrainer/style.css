@@ -1,0 +1,10 @@
+.chord {
+  background-color: #FFFFFF;
+  width: 400px;
+  border-radius:20px; 
+}
+
+.chordTitle {
+  color: #000000;
+  padding-top:15px;
+}

@@ -13,3 +13,11 @@ def index(request):
         'explanation':'This section is being actively developed. Please check back soon.'
     }
     return comingsoon(request, renderDic)
+
+def index2(request):
+    renderDic = {
+        'pageTitle':"The Guitar Trainer - Roymond.NET",
+        'jumbotron':"The Guitar Trainer",
+        'active':'None',
+    }
+    return render(request, 'guitartrainer/index.html', renderDic)

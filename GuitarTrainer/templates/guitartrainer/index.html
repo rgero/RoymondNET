@@ -1,0 +1,69 @@
+{% extends "template.html" %}
+
+{% block content %}
+{% load staticfiles %}
+  <link rel="stylesheet" href='{% static "guitartrainer\style.css" %}'>
+</head>
+<center>
+  <h2>Major Chords</h2>
+  <div class="chord">
+    <h2 class="chordTitle">A</h2>
+    <img src="{% static 'guitartrainer/chords/A.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">B</h2>
+    <img src="{% static 'guitartrainer/chords/B.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">C</h2>
+    <img src="{% static 'guitartrainer/chords/C.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">D</h2>
+    <img src="{% static 'guitartrainer/chords/D.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">E</h2>
+    <img src="{% static 'guitartrainer/chords/E.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">F</h2>
+    <img src="{% static 'guitartrainer/chords/F.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">G</h2>
+    <img src="{% static 'guitartrainer/chords/G.png' %}">
+  </div>
+  <p />
+
+  <h2>Minor Chords</h2>
+  <div class="chord">
+    <h2 class="chordTitle">Am</h2>
+    <img src="{% static 'guitartrainer/chords/Am.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">Bm</h2>
+    <img src="{% static 'guitartrainer/chords/Bm.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">Cm</h2>
+    <img src="{% static 'guitartrainer/chords/Cm.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">Dm</h2>
+    <img src="{% static 'guitartrainer/chords/Dm.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">Em</h2>
+    <img src="{% static 'guitartrainer/chords/Em.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">Fm</h2>
+    <img src="{% static 'guitartrainer/chords/Fm.png' %}">
+  </div>
+  <div class="chord">
+    <h2 class="chordTitle">Gm</h2>
+    <img src="{% static 'guitartrainer/chords/Gm.png' %}">
+  </div>
+</center>
+{% endblock %}
