@@ -23,8 +23,11 @@
 
 input, select {
   color:black;
-  background-color: #d1d1d1;
   width:100%;
+}
+
+input:focus{
+  background-color: yellow;
 }
 
 #submitButton {
