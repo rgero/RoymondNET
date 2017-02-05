@@ -5,13 +5,13 @@
   <link rel="stylesheet" href='{% static "guitartrainer\style.css" %}'>
 </head>
 <center>
-  <h2>Major Chords</h2>
-  {% for chord in chordList %}
-  <div class="chord">
-    <h2 class="chordTitle">{{ chord.0 }}</h2>
-    <img src="{% static chord.1 %}">
-  </div>
-  {% endfor %}
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <br>
+    <input id="submitButton" type="submit" value="Prepare" />
+  </form>
 
 </center>
 {% endblock %}

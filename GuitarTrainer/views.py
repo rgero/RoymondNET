@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import GuitarTrainerSetup
 
 # Create your views here.
 def comingsoon(request, input_dic):
@@ -26,12 +27,14 @@ def index2(request):
     chordList.append( ["G", "guitartrainer\chords\G.png"] )
 
 
+    formData = GuitarTrainerSetup()
 
 
     renderDic = {
         'pageTitle':"The Guitar Trainer - Roymond.NET",
         'jumbotron':"The Guitar Trainer",
         'active':'None',
-        'chordList':chordList
+        'chordList':chordList,
+        'form': formData
     }
     return render(request, 'guitartrainer/index.html', renderDic)
