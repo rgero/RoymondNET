@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+
+{% block content %}
+{% load staticfiles %}
+  <link rel="stylesheet" href='{% static "guitartrainer\style.css" %}'>
+</head>
+<center>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <br>
+    <input id="submitButton" type="submit" value="Prepare" />
+  </form>
+
+</center>
+{% endblock %}

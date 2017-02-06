@@ -6,14 +6,15 @@ from django.shortcuts import render_to_response
 # Create your views here.
 
 def index(request):
-    return render(request, 'personal/index.html',
-         {'active': None}
-
-    )
+    renderDic = {
+        'active': None
+      }
+    return render(request, 'personal/index.html', renderDic)
 
 def about(request):
-    return render(request, 'personal/about.html',
-            {   'active': "about",
-                'jumbotron': "About Me",
-            }
-        )
+    renderDic = {
+        'active': "about",
+        'jumbotron': "About Me",
+        'pageTitle': 'About Me - Roymond.net'
+      }
+    return render(request, 'personal/about.html', renderDic)

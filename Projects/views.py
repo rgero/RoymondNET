@@ -2,14 +2,14 @@ from django.shortcuts import render
 
 # Create your views here.
 def projects(request):
-    return render(request, 'projects/index.html',
-            {'active': "projects",
-             'jumbotron':"Projects"
-            }
-    )
+    renderDic = {
+        'active': "projects",
+        'jumbotron':"Projects",
+        'pageTitle': 'Projects - Roymond.net',
+    }
+    return render(request, 'projects/index.html', renderDic)
 
 def language(request,renderDic):
-    renderDic['active'] = 'projects'
     return render(request, request.path[1::] + "/index.html", renderDic)
 
 def comingsoon(request, input_dic):
