@@ -9,7 +9,6 @@ import datetime
 
 def form_test(request):
     # if this is a POST request we need to process the form data
-    print request
     if request.method == 'POST':
         formData = PenaltySearchForm(request.POST)
 
