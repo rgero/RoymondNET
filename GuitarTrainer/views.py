@@ -21,7 +21,7 @@ def index2(request):
         formData = GuitarTrainerSetup(request.POST)
         if formData.is_valid():
             cleanedData = formData.cleaned_data
-            print cleanedData
+            print(cleanedData)
     else:
         formData = GuitarTrainerSetup()
     renderDic = {
