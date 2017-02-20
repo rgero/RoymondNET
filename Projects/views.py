@@ -87,6 +87,24 @@ def java_guitar_trainer(request):
     }
     return render(request, 'projects/java/guitar-trainer.html', renderDic)
 
+def java_chord_drawer(request):
+    renderDic = {
+        'pageTitle':"The Chord Drawer - Roymond.NET",
+        'jumbotron':"The Chord Drawer",
+        'active':'projects',
+        'Header': 'Coming soon!'
+    }
+    return comingsoon(request, renderDic)
+
+def java_background_2017(request):
+    renderDic = {
+        'pageTitle':"The 2017 Background Generator - Roymond.NET",
+        'jumbotron':"The 2017 Background Generator",
+        'active':'projects',
+        'Header': 'Coming soon!'
+    }
+    return comingsoon(request, renderDic)
+
 def perl(request):
     renderDic = {
         'pageTitle':"PERL Projects - Roymond.NET",
