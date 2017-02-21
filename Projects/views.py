@@ -75,7 +75,7 @@ def csharp_painbow(request):
 
 def java_background(request):
 
-    dataFile = 'static/projects/java/background/pageData.json'
+    dataFile = 'Projects/static/projects/java/background/pageData.json'
     pageData = readJSON(dataFile)
 
     renderDic = {
@@ -84,7 +84,6 @@ def java_background(request):
         'active':'projects'
     }
     renderDic.update(pageData)
-    print renderDic
     return render(request, 'projects/projectTemp.html', renderDic)
 
 def java_image_processor(request):

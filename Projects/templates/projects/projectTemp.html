@@ -20,15 +20,26 @@
     {% for heading in pageContent %}
       {% for value in heading.iteritems %}
         <h3>{{value.0}}</h3>
-          {% for paragraph in value.1 %}
-            <p>{{paragraph}}<p>
-
-
+          {% for entry in value.1 %}
+            {% for k,v in entry.iteritems %}
+                {% if k == "paragraph" %}
+                  <p>{{v}}</p>
+                {% elif k == "unordered_list" %}
+                  <LI>{{v}}
+                {% elif k == "ordered_list" %}
+                  <OL>{{v}}
+                {% endif %}
+            {% endfor %}
           {% endfor %}
-
       {% endfor %}
     {% endfor %}
+  {% endif %}
 
+  {% if images %}
+    <h3>Images</h3>
+    <div>{{images.0.settings.width}}</div>
+    <div>{{images.0.settings.height}}</div>
+    <div>{{images.0.settings.maxRow}}</div>
   {% endif %}
 
 {% endblock %}
