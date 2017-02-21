@@ -1,0 +1,18 @@
+{
+  "quickfacts": {
+      "GitHub" : "https://github.com/rgero/BackgroundGenerator",
+      "JAR File" : "projects/java/jar_files/BackgroundGenerator.jar"
+  },
+  "pageContent": [
+      {"Heading 1" : [
+        "Test",
+        "Test",
+        "Test"
+      ]},
+      {"Heading 2" : [
+        "Test",
+        "Test",
+        "Test"
+      ]}
+  ]
+}

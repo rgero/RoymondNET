@@ -1,6 +1,16 @@
 from django.shortcuts import render
+from django.contrib.staticfiles.templatetags.staticfiles import static
+import json
 
 # Create your views here.
+
+def readJSON(file):
+    data = open(file, 'r')
+    data = json.load(data)
+    return data
+
+
+
 def projects(request):
     renderDic = {
         'active': "projects",
@@ -64,12 +74,18 @@ def csharp_painbow(request):
     return render(request, 'projects/c-sharp/painbow-road.html', renderDic)
 
 def java_background(request):
+
+    dataFile = 'static/projects/java/background/pageData.json'
+    pageData = readJSON(dataFile)
+
     renderDic = {
         'pageTitle':"The Background Generator - Roymond.NET",
         'jumbotron':"The Background Generator",
         'active':'projects'
     }
-    return render(request, 'projects/java/background.html', renderDic)
+    renderDic.update(pageData)
+    print renderDic
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def java_image_processor(request):
     renderDic = {
