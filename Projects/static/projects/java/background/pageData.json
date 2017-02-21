@@ -25,6 +25,17 @@
 			"width": 250,
 			"height": 250,
 			"maxRow": 3
-		}
+		},
+		"imgData": [
+			[0, {
+				"The UI": "projects/java/background/background_UI.png"
+			}],
+			[1, {
+				"Avs Logo": "projects/java/background/Avs_Example.png"
+			}],
+			[2, {
+				"Bruins Logo": "projects/java/background/Bruins_Example.png"
+			}]
+		]
 	}]
 }

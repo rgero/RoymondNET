@@ -37,9 +37,17 @@
 
   {% if images %}
     <h3>Images</h3>
-    <div>{{images.0.settings.width}}</div>
-    <div>{{images.0.settings.height}}</div>
-    <div>{{images.0.settings.maxRow}}</div>
+    <center>
+    <table>
+          <tr>
+            {% for dataPoint in images.0.imgData %}
+              {% for alt,img in dataPoint.1.iteritems %}
+                <td><a href="{{img}}" target="_blank"><img src="{{img}}" alt="{{alt}}" width={{images.0.settings.width}} height={{images.0.settings.height}}></td>
+              {% endfor %}
+            {% endfor %}
+          </tr>
+    </table>
+    <center>
   {% endif %}
 
 {% endblock %}
