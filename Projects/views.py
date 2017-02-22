@@ -81,9 +81,13 @@ def java_background(request):
     renderDic = {
         'pageTitle':"The Background Generator - Roymond.NET",
         'jumbotron':"The Background Generator",
-        'active':'projects'
-    }
-    renderDic.update(pageData)
+        'active':'projects',
+        'static': static("."),
+        }
+    renderDic = {**renderDic, **pageData}
+
+
+
     return render(request, 'projects/projectTemp.html', renderDic)
 
 def java_image_processor(request):

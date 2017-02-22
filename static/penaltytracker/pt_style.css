@@ -54,3 +54,11 @@ table {
 #header_referees {
 	width: 25%;
 }
+
+#userInputTerms{
+  border=1px;
+}
+
+#userData{
+  display:none;
+}

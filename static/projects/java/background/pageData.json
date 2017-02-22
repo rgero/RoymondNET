@@ -1,24 +1,41 @@
 {
-  "quickfacts": {
-      "GitHub" : "https://github.com/rgero/BackgroundGenerator",
-      "JAR File" : "projects/java/jar_files/BackgroundGenerator.jar"
-  },
-  "pageContent": [
-      {"Heading 1" : [
-        {
-          "paragraph": "I’ve always been one of those people who loves making small changes in my life to constantly provide a subtle note of freshness in it. In college, I’d regularly redesign the layout of my dorm room at the beginning of each semester to motivate myself and to make it feel like it was a new start. This concept often ended up finding a way into my electronics. I’d often change the backgrounds, colors, sounds and other things of that nature. This led to having a rather large folder of background images, which would often vary from things I am interested in, to ones that I just thought were pretty cool."
-        },
-        {
-          "paragraph": "I’ve always been one of those people who loves making small changes in my life to constantly provide a subtle note of freshness in it. In college, I’d regularly redesign the layout of my dorm room at the beginning of each semester to motivate myself and to make it feel like it was a new start. This concept often ended up finding a way into my electronics. I’d often change the backgrounds, colors, sounds and other things of that nature. This led to having a rather large folder of background images, which would often vary from things I am interested in, to ones that I just thought were pretty cool."
-        },
-        {
-          "paragraph": "I’ve always been one of those people who loves making small changes in my life to constantly provide a subtle note of freshness in it. In college, I’d regularly redesign the layout of my dorm room at the beginning of each semester to motivate myself and to make it feel like it was a new start. This concept often ended up finding a way into my electronics. I’d often change the backgrounds, colors, sounds and other things of that nature. This led to having a rather large folder of background images, which would often vary from things I am interested in, to ones that I just thought were pretty cool."
-        },
-      ]},
-      {"Heading 2" : [
-        { "unordered_list": "Test" },
-        { "unordered_list": "Test" },
-        { "unordered_list": "Test" },
-      ]}
-  ]
+	"quickfacts": {
+		"GitHub": "https://github.com/rgero/BackgroundGenerator",
+		"JAR File": "projects/java/jar_files/BackgroundGenerator.jar"
+	},
+	"pageContent": [{
+		"Heading 1": [{
+			"paragraph": "I've always been one of those people who loves making small changes in my life to constantly provide a subtle note of freshness in it. In college, I’d regularly redesign the layout of my dorm room at the beginning of each semester to motivate myself and to make it feel like it was a new start. This concept often ended up finding a way into my electronics. I’d often change the backgrounds, colors, sounds and other things of that nature. This led to having a rather large folder of background images, which would often vary from things I am interested in, to ones that I just thought were pretty cool."
+		}, {
+			"paragraph": "I've always been one of those people who loves making small changes in my life to constantly provide a subtle note of freshness in it. In college, I’d regularly redesign the layout of my dorm room at the beginning of each semester to motivate myself and to make it feel like it was a new start. This concept often ended up finding a way into my electronics. I’d often change the backgrounds, colors, sounds and other things of that nature. This led to having a rather large folder of background images, which would often vary from things I am interested in, to ones that I just thought were pretty cool."
+		}, {
+			"paragraph": "I've always been one of those people who loves making small changes in my life to constantly provide a subtle note of freshness in it. In college, I’d regularly redesign the layout of my dorm room at the beginning of each semester to motivate myself and to make it feel like it was a new start. This concept often ended up finding a way into my electronics. I’d often change the backgrounds, colors, sounds and other things of that nature. This led to having a rather large folder of background images, which would often vary from things I am interested in, to ones that I just thought were pretty cool."
+		}]
+	}, {
+		"Heading 2": [{
+			"unordered_list": "Test"
+		}, {
+			"unordered_list": "Test"
+		}, {
+			"unordered_list": "Test"
+		}]
+	}],
+	"images": [{
+		"settings": {
+			"width": 250,
+			"height": 250,
+			"maxRow": 3
+		},
+		"imgData": [
+			[0, {
+				"The UI": "projects/java/background/background_UI.png"
+			}],
+			[1, {
+				"Avs Logo": "projects/java/background/Avs_Example.png"
+			}],
+			[2, {
+				"Bruins Logo": "projects/java/background/Bruins_Example.png"
+			}]
+		]
+	}]
 }
