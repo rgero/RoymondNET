@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+    {% load staticfiles %}
     <title>{{pageTitle|default:"Roymond.net - A place for projects"}}</title>
+    <link rel="shortcut icon" href="{% static 'Icon.ico' %}" />
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<!-- My Style Page -->
-    {% load staticfiles %}
+
 	<link rel="stylesheet" href="{% static "personal_style.css" %}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

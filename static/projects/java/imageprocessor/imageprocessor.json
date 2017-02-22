@@ -1,15 +1,15 @@
 {
-  "pageTitle" : "The Background Generator - Roymond.NET",
-  "jumbotron" : "The Background Generator",
+  "pageTitle" : "The Image Processor - Roymond.NET",
+  "jumbotron" : "The Image Processor",
   "active" : "projects",
   "quickfacts": {
 		"GitHub": ["external", "https://github.com/rgero/ImageProcessor"],
-		"JAR File": ["internal_file","projects/java/jar_files/BadImageProcessing.jar"]
+		"JAR File": ["internal_file", "projects/java/jar_files/BadImageProcessing.jar"]
 	},
   "pageContent":
   [
     [ {"heading" : "About the Project"},
-      {"paragraph" : "This project was inspired by the fact that people put so much effort into making their pictures look “better” through the use of filters. I’d often catch my friends spending minutes adding these filters to their photos and often the end result just left me wishing I could get the original picture."},
+      {"paragraph" : "This project was inspired by the fact that people put so much effort into making their pictures look 'better' through the use of filters. I’d often catch my friends spending minutes adding these filters to their photos and often the end result just left me wishing I could get the original picture."},
       {"paragraph" : "This led me to an idea. What if there was a program that added these filters to pictures, but rather than intending to make the pictures better, it set out to make them worse."},
       {"paragraph" : "It was a very tongue in cheek project, but some of my friends actually really liked some of the results so I kept working on it to make it a more complete project."},
       {"heading" : "Iterations"},
@@ -30,10 +30,10 @@
   				"The UI": "projects/java/imageprocessor/UI.png"
   			}],
   			[1, {
-  				"Avs Logo": "projects/java/imageprocessor/Ling_Example.png.png"
+  				"Ling Example": "projects/java/imageprocessor/Ling_Example.png"
   			}],
   			[2, {
-  				"Bruins Logo": "projects/java/imageprocessor/BlueAngel_Example.png"
+  				"Blue Angel Example": "projects/java/imageprocessor/BlueAngel_Example.png"
   			}]
 	    ]
     }]
