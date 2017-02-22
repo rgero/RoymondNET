@@ -18,7 +18,13 @@
       {"unordered_list" : ["Number 1","Number 2", "Number 3", "Number 4"]},
       {"heading": "Heading 3"},
       {"ordered_list" : ["Number 1","Number 2", "Number 3", "Number 4"]},
-      {"link" :  ["external", "www.google.com"]}
+      {"link" :  ["external", "www.google.com"]},
+      {"heading": "Table Header"},
+      {"table" : [
+                    ["header", ["Col 1", "Col 2", "Col 3"]],
+                    ["row", ["Col 1", "Col 2", "Col 3"]],
+                    ["row", ["Col 1", "Col 2", "Col 3"]]
+                 ]}
     ]
   ],
   "gallery":

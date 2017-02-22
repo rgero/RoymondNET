@@ -57,6 +57,25 @@
             <center>
               <p><a href="{{static}}{{v.1}}" target="_blank" alt="{{v.0}}"><img src="{{static}}{{v.1}}" alt="{{v.0}}" width=150 height=150></a></p>
             </center>
+
+          {% elif k == "table" %}
+            <center>
+              <table>
+                {% for tableEntry in v %}
+                    <tr>
+                      {% if tableEntry.0 == "header" %}
+                        {% for val in tableEntry.1 %}
+                          <th>{{val|safe}}</th>
+                        {% endfor %}
+                      {% elif tableEntry.0 == "row" %}
+                        {% for val in tableEntry.1 %}
+                          <td>{{val|safe}}</td>
+                        {% endfor %}
+                      {% endif %}
+                    </tr>
+                {% endfor %}
+              </table>
+            </center>
           {% endif %}
 
         {% endfor %}
