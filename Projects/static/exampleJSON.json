@@ -1,0 +1,49 @@
+{
+  "pageTitle" : "The Background Generator - Roymond.NET",
+  "jumbotron" : "The Background Generator",
+  "active" : "projects",
+  "quickfacts": {
+		"GitHub": ["external", "https://github.com/rgero/BackgroundGenerator"],
+		"JAR File": ["internal_file","projects/java/jar_files/BackgroundGenerator.jar"],
+    "File": ["internal_page","python"]
+	},
+  "pageContent":
+  [
+    [ {"heading" : "Heading 1"},
+      {"paragraph" : " Testing blah blah blah <a href='{% url python %}' target='_blank'>Test</a>"},
+      {"paragraph" : " Testing blah blah blah"},
+      {"paragraph" : " Testing blah blah blah"},
+      {"img" : ["Description", "projects/java/background/background_UI.png"]},
+      {"heading" : "Heading 2"},
+      {"unordered_list" : ["Number 1","Number 2", "Number 3", "Number 4"]},
+      {"heading": "Heading 3"},
+      {"ordered_list" : ["Number 1","Number 2", "Number 3", "Number 4"]},
+      {"link" :  ["external", "www.google.com"]},
+      {"heading": "Table Header"},
+      {"table" : [
+                    ["header", ["Col 1", "Col 2", "Col 3"]],
+                    ["row", ["Col 1", "Col 2", "Col 3"]],
+                    ["row", ["Col 1", "Col 2", "Col 3"]]
+                 ]}
+    ]
+  ],
+  "gallery":
+  [
+    {	"settings": {
+			"width": 250,
+			"height": 250,
+			"maxRow": 3
+		},
+		  "imgData": [
+  			[0, {
+  				"The UI": "projects/java/background/background_UI.png"
+  			}],
+  			[1, {
+  				"Avs Logo": "projects/java/background/Avs_Example.png"
+  			}],
+  			[2, {
+  				"Bruins Logo": "projects/java/background/Bruins_Example.png"
+  			}]
+	    ]
+    }]
+}

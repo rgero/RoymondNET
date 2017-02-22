@@ -74,19 +74,16 @@ def csharp_painbow(request):
     return render(request, 'projects/c-sharp/painbow-road.html', renderDic)
 
 def java_background(request):
-
-    dataFile = 'Projects/static/projects/java/background/pageData.json'
+    dataFile = 'Projects/static/projects/java/background/background.json'
     renderDic = readJSON(dataFile)
     renderDic['static'] = static(".")
     return render(request, 'projects/projectTemp.html', renderDic)
 
 def java_image_processor(request):
-    renderDic = {
-        'pageTitle':"The Bad Image Processor - Roymond.NET",
-        'jumbotron':"The Bad Image Processor",
-        'active':'projects'
-    }
-    return render(request, 'projects/java/imageprocessor.html', renderDic)
+    dataFile = r'Projects/static/projects/java/imageprocessor/imageprocessor.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def java_guitar_trainer(request):
     renderDic = {
