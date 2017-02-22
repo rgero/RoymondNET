@@ -32,17 +32,17 @@
           {% if k == "heading" %}
             <h3>{{v}}</h3>
           {% elif k == "paragraph" %}
-            <p>{{v}}</p>
+            <p>{{v|safe}}</p>
           {% elif k == "unordered_list" %}
             <UL>
               {% for e in v %}
-                <LI> {{e}}
+                <LI> {{e|safe}}
               {% endfor %}
             </UL>
           {% elif k == "ordered_list" %}
             <OL>
               {% for e in v %}
-                <LI> {{e}}
+                <LI> {{e|safe}}
               {% endfor %}
             </OL>
           {% elif k == "link" %}
