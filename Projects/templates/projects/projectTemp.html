@@ -2,7 +2,6 @@
 
 {% block content %}
 {% load staticfiles %}
-  {{static}}
   {% if quickfacts %}
     <center>
       <h3>Quick Facts</h3>
@@ -10,7 +9,16 @@
         {% for k, v in quickfacts.items %}
           <tr>
             <td>{{k}}</td>
-            <td><a href="{{v}}" target="_blank">Link to {{k}}</td>
+
+            <td>
+              {% if v.0 == "external" %}
+                <a href="{{v.1}}">Link to {{k}}</a>
+              {% elif v.0 == "internal_file" %}
+                <a href="{{static}}{{v.1}}">Link to {{k}}</a>
+              {% else %}
+                <a href="{% url v.1 %}">Link to {{k}}</a>
+              {% endif %}
+            </td>
           </tr>
         {% endfor %}
       </table>
@@ -18,32 +26,54 @@
   {% endif %}
 
   {% if pageContent %}
-    {% for heading in pageContent %}
-      {% for value in heading.items %}
-        <h3>{{value.0}}</h3>
-          {% for entry in value.1 %}
-            {% for k,v in entry.items %}
-                {% if k == "paragraph" %}
-                  <p>{{v}}</p>
-                {% elif k == "unordered_list" %}
-                  <LI>{{v}}
-                {% elif k == "ordered_list" %}
-                  <OL>{{v}}
-                {% endif %}
-            {% endfor %}
-          {% endfor %}
+    {% for content in pageContent %}
+      {% for entry in content %}
+        {% for k,v in entry.items %}
+          {% if k == "heading" %}
+            <h3>{{v}}</h3>
+          {% elif k == "paragraph" %}
+            <p>{{v}}</p>
+          {% elif k == "unordered_list" %}
+            <UL>
+              {% for e in v %}
+                <LI> {{e}}
+              {% endfor %}
+            </UL>
+          {% elif k == "ordered_list" %}
+            <OL>
+              {% for e in v %}
+                <LI> {{e}}
+              {% endfor %}
+            </OL>
+          {% elif k == "link" %}
+            {% if v.0 == "external" %}
+              <a href="{{v.1}}">Link to {{k}}</a>
+            {% elif v.0 == "internal_file" %}
+              <a href="{{static}}{{v.1}}">Link to {{k}}</a>
+            {% else %}
+              <a href="{% url v.1 %}">Link to {{k}}</a>
+            {% endif %}
+          {% elif k == "img" %}
+            <center>
+              <p><a href="{{static}}{{v.1}}" target="_blank" alt="{{v.0}}"><img src="{{static}}{{v.1}}" alt="{{v.0}}" width=150 height=150></a></p>
+            </center>
+          {% endif %}
+
+        {% endfor %}
       {% endfor %}
     {% endfor %}
   {% endif %}
 
-  {% if images %}
+
+  {% if gallery %}
     <h3>Images</h3>
     <center>
     <table>
           <tr>
-            {% for dataPoint in images.0.imgData %}
+            {% for dataPoint in gallery.0.imgData %}
               {% for alt,img in dataPoint.1.items %}
-                <td><a href="{{static}}{{img}}" target="_blank" alt="{{alt}}"><img src="{{static}}{{img}}" alt="{{alt}}" width={{images.0.settings.width}} height={{images.0.settings.height}}></td>
+                {{images.0.settings.height}}
+                <td><a href="{{static}}{{img}}" target="_blank" alt="{{alt}}"><img src="{{static}}{{img}}" alt="{{alt}}" width={{gallery.0.settings.width}} height={{gallery.0.settings.height}}></td>
               {% endfor %}
             {% endfor %}
           </tr>

@@ -76,18 +76,8 @@ def csharp_painbow(request):
 def java_background(request):
 
     dataFile = 'Projects/static/projects/java/background/pageData.json'
-    pageData = readJSON(dataFile)
-
-    renderDic = {
-        'pageTitle':"The Background Generator - Roymond.NET",
-        'jumbotron':"The Background Generator",
-        'active':'projects',
-        'static': static("."),
-        }
-    renderDic = {**renderDic, **pageData}
-
-
-
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
     return render(request, 'projects/projectTemp.html', renderDic)
 
 def java_image_processor(request):
