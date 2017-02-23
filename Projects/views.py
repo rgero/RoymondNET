@@ -86,12 +86,10 @@ def java_image_processor(request):
     return render(request, 'projects/projectTemp.html', renderDic)
 
 def java_guitar_trainer(request):
-    renderDic = {
-        'pageTitle':"The Guitar Trainer - Roymond.NET",
-        'jumbotron':"The Guitar Trainer",
-        'active':'projects'
-    }
-    return render(request, 'projects/java/guitar-trainer.html', renderDic)
+    dataFile = 'Projects/static/projects/java/guitartrainer/guitartrainer.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def java_chord_drawer(request):
     renderDic = {
