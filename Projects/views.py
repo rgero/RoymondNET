@@ -135,3 +135,9 @@ def iOS(request):
         'active':'projects'
     }
     return comingsoon(request, renderDic)
+
+def example_json(request):
+    dataFile = 'Projects/static/exampleJSON.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)

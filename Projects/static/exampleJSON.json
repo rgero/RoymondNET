@@ -24,7 +24,8 @@
                     ["header", ["Col 1", "Col 2", "Col 3"]],
                     ["row", ["Col 1", "Col 2", "Col 3"]],
                     ["row", ["Col 1", "Col 2", "Col 3"]]
-                 ]}
+                 ]},
+       {"iframe" : "https://www.youtube.com/embed/videoseries?list=PLOaTPE4td0A1apqnBlTkttm4Xi20LAFDt"}
     ]
   ],
   "gallery":

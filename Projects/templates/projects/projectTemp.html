@@ -76,6 +76,11 @@
                 {% endfor %}
               </table>
             </center>
+
+          {% elif k == "iframe" %}
+            <center>
+              <iframe width="560" height="315" src="{{v}}" frameborder="1" allowfullscreen></iframe>
+            </center>
           {% endif %}
 
         {% endfor %}

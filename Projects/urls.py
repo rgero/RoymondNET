@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'^(?i)perl$', views.perl, name="perl"),
     url(r'^(?i)android$', views.android, name="android"),
     url(r'^(?i)ios$', views.iOS, name="iOS"),
+    url(r'^(?i)example$', views.example_json, name="Example")
 ]
