@@ -12,12 +12,10 @@ def readJSON(file):
 
 
 def projects(request):
-    renderDic = {
-        'active': "projects",
-        'jumbotron':"Projects",
-        'pageTitle': 'Projects - Roymond.net',
-    }
-    return render(request, 'projects/index.html', renderDic)
+    dataFile = 'Projects/static/projects/index.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def language(request,renderDic):
     return render(request, request.path[1::] + "/index.html", renderDic)
