@@ -8,7 +8,7 @@ def readJSON(file):
     data = open(file, 'r')
     data = json.load(data)
     return data
-    
+
 def projects(request):
     dataFile = 'Projects/static/projects/index.json'
     renderDic = readJSON(dataFile)
@@ -67,8 +67,8 @@ def csharp_painbow(request):
     }
     return render(request, 'projects/c-sharp/painbow-road.html', renderDic)
 
-def java_background(request):
-    dataFile = 'Projects/static/projects/java/background/background.json'
+def java_background_old(request):
+    dataFile = 'Projects/static/projects/java/background_old/background.json'
     renderDic = readJSON(dataFile)
     renderDic['static'] = static(".")
     return render(request, 'projects/projectTemp.html', renderDic)
@@ -94,10 +94,10 @@ def java_chord_drawer(request):
     }
     return comingsoon(request, renderDic)
 
-def java_background_2017(request):
+def java_background(request):
     renderDic = {
-        'pageTitle':"The 2017 Background Generator - Roymond.NET",
-        'jumbotron':"The 2017 Background Generator",
+        'pageTitle':"The Background Generator - Roymond.NET",
+        'jumbotron':"The Background Generator",
         'active':'projects',
         'Header': 'Coming soon!'
     }

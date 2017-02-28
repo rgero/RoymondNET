@@ -1,9 +1,9 @@
 {
-  "pageTitle" : "The Background Generator - Roymond.NET",
-  "jumbotron" : "The Background Generator",
+  "pageTitle" : "The Old Background Generator - Roymond.NET",
+  "jumbotron" : "The Old Background Generator",
   "active" : "projects",
   "quickfacts": {
-		"GitHub": ["external", "https://github.com/rgero/BackgroundGenerator"],
+		"GitHub": ["external", "https://github.com/rgero/BackgroundGenerator_Legacy"],
 		"JAR File": ["internal_file","projects/java/jar_files/BackgroundGenerator.jar"]
 	},
   "pageContent":
@@ -26,16 +26,16 @@
 		},
 		  "imgData": [
   			[0, {
-  				"The UI": "projects/java/background/background_UI.png"
+  				"The UI": "projects/java/background_old/background_UI.png"
   			}],
   			[1, {
-  				"Avs Logo": "projects/java/background/Avs_Example.png"
+  				"Avs Logo": "projects/java/background_old/Avs_Example.png"
   			}],
   			[2, {
-  				"Bruins Logo": "projects/java/background/Bruins_Example.png"
+  				"Bruins Logo": "projects/java/background_old/Bruins_Example.png"
   			}],
         [3, {
-          "Red Sox Example": "projects/java/background/RedSox_Example.png"
+          "Red Sox Example": "projects/java/background_old/RedSox_Example.png"
         }]
 	    ]
     }]

@@ -3,7 +3,7 @@
 	"jumbotron" : "Selina No!",
 	"active" : "projects",
 	"quickfacts": {
-		"GitHub": ["external", "https://github.com/rgero/SelinaNo"],
+		"GitHub": ["external", "https://github.com/rgero/SelinaNo"]
 	},
 	"pageContent":
 		[
@@ -18,7 +18,7 @@
 				{"paragraph": "Unfortunately, XNA Game Studio reached the end of its life on January 31st, 2013. When I was enrolled in the course, I had to install an older version of Visual Studio to make the framework. I am actually planning on reviving this little project and bringing it up to date with the latest Visual Studio and MonoGame. Here are a brief list of improvements that I would like to make to the game while attempting to keep it’s silly nature."},
 				{"paragraph": "The first thing I would improve would be the graphics and sound. I remember when I was initially working on this project, I was ok with the idea of simple graphics and sounds because it was meant to be silly (and I also am not the best with creating assets). If I were to do it again I would love to create new graphics for the projectiles, a more immersive background and probably some more interesting sounds (except for the Yum sound… that one is staying)."},
 				{"paragraph": "The second thing would be the controls. Originally the game use the mouse to move Selina around, there were no other options for the player. I feel it would be a fun experience to add support for a keyboard as well as a controller. Another thing that I believe would be worth doing would be to add a sort of physics to the player. Think of how when Mario is running at full speed, he doesn’t come to an immediate stop when you let go of the direction. I feel that this would add a degree of difficulty that might be missing in the game."},
-				{"paragraph": "The third thing I would like to improve would be the targeting. In the original version of the game, the enemy would look at their position and the player’s position and form an unit direction that would connect the two. This meant that if you were moving around, you could easily dodge every shot. I would like to add some randomness to it so that way it is a bit more difficult."},
+				{"paragraph": "The third thing I would like to improve would be the targeting. In the original version of the game, the enemy would look at their position and the player’s position and form an unit direction that would connect the two. This meant that if you were moving around, you could easily dodge every shot. I would like to add some randomness to it so that way it is a bit more difficult."}
 			]
 		]
 }
