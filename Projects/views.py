@@ -8,9 +8,7 @@ def readJSON(file):
     data = open(file, 'r')
     data = json.load(data)
     return data
-
-
-
+    
 def projects(request):
     dataFile = 'Projects/static/projects/index.json'
     renderDic = readJSON(dataFile)
