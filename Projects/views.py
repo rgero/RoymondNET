@@ -56,12 +56,10 @@ def csharp(request):
     return language(request, renderDic)
 
 def csharp_selina(request):
-    renderDic = {
-        'pageTitle':"Selina No! - Roymond.NET",
-        'jumbotron':"Selina No!",
-        'active':'projects'
-    }
-    return render(request, 'projects/c-sharp/selina-no.html', renderDic)
+    dataFile = 'Projects/static/projects/c-sharp/selina.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def csharp_painbow(request):
     renderDic = {
