@@ -38,6 +38,12 @@ h3,h4 {
   font-weight:bold;
 }
 
+.highlight {
+	color: #FFFFFF;
+	font-weight:bold;
+
+}
+
 .contact a:hover {
     color: #FFFFFF;
     text-decoration: none;

@@ -1,0 +1,26 @@
+{
+  "pageTitle" : "Projects - Roymond.NET",
+  "jumbotron" : "Roy's Projects",
+  "active" : "projects",
+  "pageContent":
+  	[
+  		[
+  			{"paragraph": "From here you can see the wide range of projects I have been working on as well as the ones I have completed. They will organized by the programming languages they were developed in. As this website nears completion, each project will start to have its own dedicated page with links to relevant blog posts outlining the process in which they were developed."},
+  			{"paragraph": "To read about how I originally learned the language in question, click the heading"},
+  			{"paragraph": "Please note, I do not intend for this page to be a highlight reel. If anything, it is more to demonstrate how I've progressed over the years"},
+  			{"heading": "Python"},
+  			{"unordered_list": ["<a href='/penaltytracker'>The Penalty Tracker</a>", "Roymond.NET", "File Renamer", "IP Notifier", "Link to Spotify", "Guitar Notes"]},
+  			{"heading": "C#"},
+  			{"unordered_list": ["Selina No", "File Renamer - GUI", "Laser Defender", "Painbow Road"]},
+  			{"heading": "Java"},
+  			{"unordered_list": ["The Background Generator", "The 2017 Background Generator", "The Bad Image Processor", "The Guitar Trainer", "The Chord Drawer"]},
+  			{"heading": "PERL"},
+  			{"unordered_list": ["Size Comparsion"]},
+  			{"heading": "Android"},
+  			{"unordered_list": ["Shooting Time", "Hiker's Watch"]},
+  			{"heading": "iOS"},
+  			{"unordered_list": ["Shooting Time", "Guitar Trainer - Currently in progress", "Hiker's Watch"]},
+  			{"paragraph": "It is important to note that I am also working on the planning for several additional projects in various languages. I won't go into much detail involving these projects because they exist in a state of rather large fluxuation right now."}
+  		]
+  	]
+}
