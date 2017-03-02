@@ -16,7 +16,7 @@
           " Coursera - Algorithms, Part 1 - <a href=\"https://www.coursera.org/course/algs4partI\" target=\"_blank\">Link to Course</a>",
           " Coursera - Algorithms, Part 2 - <a href=\"https://www.coursera.org/course/algs4partII\" target=\"_blank\">Link to Course</a>"]},
   			{"heading": "Projects:"},
-  			{"unordered_list": ["The Background Generator", "The Bad Image Processor"]}
+  			{"unordered_list": ["The Background Generator (v1)", "The Background Generator (v2)", "The Bad Image Processor", "The Guitar Trainer", "The Chord Drawer"]}
   		]
   	]
 }

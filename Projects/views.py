@@ -22,12 +22,10 @@ def comingsoon(request, input_dic):
     return render(request, 'comingsoon.html', input_dic)
 
 def python(request):
-    renderDic = {
-        'pageTitle':"Python Projects - Roymond.NET",
-        'jumbotron':"Python Projects",
-        'active':'projects'
-    }
-    return language(request, renderDic )
+    dataFile = 'Projects/static/projects/python/index.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def python_guitar_notes(request):
     renderDic = {
