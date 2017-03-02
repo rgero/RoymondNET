@@ -38,12 +38,10 @@ def python_guitar_notes(request):
     return render(request, 'projects/python/guitar-notes.html', renderDic)
 
 def java(request):
-    renderDic = {
-        'pageTitle':"Java Projects - Roymond.NET",
-        'jumbotron':"Java Projects",
-        'active':'projects'
-    }
-    return language(request,renderDic)
+    dataFile = 'Projects/static/projects/java/index.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def csharp(request):
     renderDic = {
