@@ -42,12 +42,10 @@ def java(request):
     return render(request, 'projects/projectTemp.html', renderDic)
 
 def csharp(request):
-    renderDic = {
-        'pageTitle':"C# Projects - Roymond.NET",
-        'jumbotron':"C# Projects",
-        'active':'projects'
-    }
-    return language(request, renderDic)
+    dataFile = 'Projects/static/projects/c-sharp/c-sharp-index.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def csharp_selina(request):
     dataFile = 'Projects/static/projects/c-sharp/selina.json'
