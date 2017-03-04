@@ -108,8 +108,8 @@ def perl(request):
 
 def android(request):
     renderDic = {
-        'pageTitle':"PERL Projects - Roymond.NET",
-        'jumbotron':"PERL Projects",
+        'pageTitle':"Android Projects - Roymond.NET",
+        'jumbotron':"Android Projects",
         'Header': "Coming Soon!",
         'active':'projects'
     }
@@ -117,8 +117,8 @@ def android(request):
 
 def iOS(request):
     renderDic = {
-        'pageTitle':"PERL Projects - Roymond.NET",
-        'jumbotron':"PERL Projects",
+        'pageTitle':"iOS Projects - Roymond.NET",
+        'jumbotron':"iOS Projects",
         'Header': "Coming Soon!",
         'active':'projects'
     }
