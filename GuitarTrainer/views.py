@@ -2,26 +2,27 @@ from django.shortcuts import render
 from .forms import GuitarTrainerSetup
 
 # Create your views here.
-def comingsoon(request, input_dic):
-    return render(request, 'comingsoon.html', input_dic)
-
 def index(request):
-    renderDic = {
-        'pageTitle':"The Guitar Trainer - Roymond.NET",
-        'jumbotron':"The Guitar Trainer",
-        'active':'None',
-        'Header':'Coming Soon!',
-        'explanation':'This section is being actively developed. Please check back soon.'
-    }
-    return comingsoon(request, renderDic)
-
-def index2(request):
 
     if request.method == 'POST':
         formData = GuitarTrainerSetup(request.POST)
         if formData.is_valid():
             cleanedData = formData.cleaned_data
-            print(cleanedData)
+            numberOfChords = cleanedData["numberOfChords"]
+            timeBetween = float(cleanedData["timeBetweenChords"])
+            selectedChords = []
+            if cleanedData["selectedMajorChords"]:
+                selectedChords += cleanedData["selectedMajorChords"]
+            if cleanedData["selectedMinorChords"]:
+                selectedChords += cleanedData["selectedMinorChords"]
+
+            gameData = {
+                "numberOfChords" : numberOfChords,
+                "timeBetween" : timeBetween,
+                "selectedChords" : selectedChords
+            }
+
+            return render(request, 'guitartrainer/trainer.html', {"gameData":gameData})
     else:
         formData = GuitarTrainerSetup()
     renderDic = {

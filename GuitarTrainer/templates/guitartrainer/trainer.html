@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+
+{% block content %}
+{% load staticfiles %}
+  <link rel="stylesheet" href='{% static "guitartrainer\style.css" %}'>
+</head>
+<center>
+
+  {% if gameData %}
+    <p> <b>Number Of Chords</b>: {{gameData.numberOfChords}}<br/>
+        <b>Time between Chords</b>: {{gameData.timeBetween}}
+    </p>
+  {% else %}
+    <p>Nothing Found</p>
+  {% endif %}
+
+
+</center>
+{% endblock %}
