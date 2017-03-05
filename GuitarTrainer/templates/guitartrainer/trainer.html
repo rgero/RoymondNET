@@ -3,17 +3,29 @@
 {% block content %}
 {% load staticfiles %}
   <link rel="stylesheet" href='{% static "guitartrainer\style.css" %}'>
-</head>
+
 <center>
 
   {% if gameData %}
-    <p> <b>Number Of Chords</b>: {{gameData.numberOfChords}}<br/>
-        <b>Time between Chords</b>: {{gameData.timeBetween}}
-    </p>
+    <div id="gameData">
+      <div id="numberOfChords">{{gameData.numberOfChords}}</div>
+      <div id="timeBetweenChords">{{gameData.timeBetween}}</div>
+      <div id="selectedChords">
+        {% for i in gameData.selectedChords %}
+          {{i}},
+        {% endfor %}
+      </div>
+    </div>
+
+    <div id="game">
+        <img id="chord" src="">
+        <div id="chordName"></div>
+    </div>
   {% else %}
     <p>Nothing Found</p>
   {% endif %}
 
 
 </center>
+<script type="text/javascript" src='{% static "guitartrainer\gameScript.js" %}'></script>
 {% endblock %}
