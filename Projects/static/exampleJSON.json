@@ -16,7 +16,13 @@
       {"p" : ["None"," Testing blah blah blah <a href='{% url python %}' target='_blank'>Test</a>"]},
       {"p" : ["None"," Testing blah blah blah"]},
       {"p" : ["None"," Testing blah blah blah"]},
-      {"img" : ["Description", "projects/java/background/background_UI.png"]},
+      {"img" : {"alt":"Description",
+                "src":"projects/java/background_old/background_UI.png",
+                "width": 300,
+                "height": 150
+              }
+      },
+      {"h2": ["None","Table Header"]},
       {"unordered_list" : ["Number 1","Number 2", "Number 3", "Number 4"]},
       {"h2": ["None","Heading 3"]},
       {"ordered_list" : ["Number 1","Number 2", "Number 3", "Number 4"]},
@@ -27,7 +33,11 @@
                     ["row", ["Col 1", "Col 2", "Col 3"]],
                     ["row", ["Col 1", "Col 2", "Col 3"]]
                  ]},
-       {"iframe" : "https://www.youtube.com/embed/videoseries?list=PLOaTPE4td0A1apqnBlTkttm4Xi20LAFDt"}
+       {"h2": ["None","Table Header"]},
+       {"iframe" : [{"src":"https://www.youtube.com/embed/videoseries?list=PLOaTPE4td0A1apqnBlTkttm4Xi20LAFDt",
+                     "width":560,
+                     "height":315},"None"
+                   ]}
     ]
   ],
   "gallery":

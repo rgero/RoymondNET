@@ -41,6 +41,10 @@
                 <LI> {{e|safe}}
               {% endfor %}
             </OL>
+          {% elif k == "img" %}
+            <center>
+              <p><a href="{{static}}{{v.src}}" target="_blank" alt="{{v.alt}}"><img src="{{static}}{{v.src}}" alt="{{v.alt}}" width={{v.width}} height={{v.height}}></a></p>
+            </center>
           {% elif k == "table" %}
             <center>
               <table>
@@ -59,15 +63,19 @@
                 {% endfor %}
               </table>
             </center>
-          {% elif k == "iframe" %}
-            <center>
-              <iframe width="560" height="315" src="{{v}}" frameborder="1" allowfullscreen></iframe>
-            </center>
           {% else %}
-            {% if v.0 != "None" %}
+            {% if v.0 != "None" and v.1 != "None"%}
               {% for t,u in v.0.items %}
                 <{{k}} {{t}}={{u}}>{{v.1}}</{{k}}>
               {% endfor %}
+            {% elif v.1 == "None" %}
+              <center>
+              <{{k}}
+              {% for t,u in v.0.items %}
+                {{t}}="{{u}}"
+              {% endfor %}
+              ></{{k}}>
+              </center>
             {% else %}
               <{{k}}>{{v.1|safe}}</{{k}}>
             {% endif %}
@@ -75,6 +83,21 @@
         {% endfor %}
       {% endfor %}
     {% endfor %}
+  {% endif %}
+
+  {% if gallery %}
+    <h3>Images</h3>
+    <center>
+    <table>
+          <tr>
+            {% for dataPoint in gallery.0.imgData %}
+              {% for alt,img in dataPoint.1.items %}
+                <td><a href="{{static}}{{img}}" target="_blank" alt="{{alt}}"><img src="{{static}}{{img}}" alt="{{alt}}" width={{gallery.0.settings.width}} height={{gallery.0.settings.height}}></td>
+              {% endfor %}
+            {% endfor %}
+          </tr>
+    </table>
+    </center>
   {% endif %}
 
 {% endblock %}
