@@ -33,3 +33,7 @@ input:focus{
 #submitButton {
   width:30%;
 }
+
+#game {
+  background-color: white;
+}

@@ -8,9 +8,9 @@
 
   {% if gameData %}
     <div id="gameData">
-      <div id="numberOfChords">{{gameData.numberOfChords}}</div>
-      <div id="timeBetweenChords">{{gameData.timeBetween}}</div>
-      <div id="selectedChords">
+      <div id="numberOfChords" style="display:none">{{gameData.numberOfChords}}</div>
+      <div id="timeBetweenChords" style="display:none">{{gameData.timeBetween}}</div>
+      <div id="selectedChords"  style="display:none">
         {% for i in gameData.selectedChords %}
           {{i}},
         {% endfor %}
@@ -18,9 +18,9 @@
     </div>
 
     <div id="game">
+        <div id="chordTitle"></div>
         <img id="chord" src="">
-        <div id="chordName"></div>
-        <div id="timeRemaining"></div>
+        <div id="chordsRemaining"></div>
     </div>
   {% else %}
     <p>Nothing Found</p>
