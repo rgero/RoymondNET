@@ -19,7 +19,6 @@ function chooseChord(){
     chosenChord = chosenChords[chosenIndex];
   }
   previousCall = chosenChord;
-  console.log(chosenChord);
   numberOfChords--;
   if (numberOfChords < 0){
     window.clearTimeout(timer);
@@ -33,7 +32,7 @@ function chooseChord(){
 var timer;
 var previousCall = "";
 var chosenChord = "";
-var timeBetween = 1; //document.getElementById("timeBetweenChords").innerHTML;
-var numberOfChords = 10; //document.getElementById("numberOfChords").innerHTML;
-var chosenChords = ['A','B','C'];
+var timeBetween = document.getElementById("timeBetweenChords").innerHTML;
+var numberOfChords = document.getElementById("numberOfChords").innerHTML;
+var chosenChords = document.getElementById("selectedChords").innerHTML.split(", ");
 playGame();

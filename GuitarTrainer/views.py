@@ -21,8 +21,13 @@ def index(request):
                 "timeBetween" : timeBetween,
                 "selectedChords" : selectedChords
             }
-
-            return render(request, 'guitartrainer/trainer.html', {"gameData":gameData})
+            renderDic = {
+                'pageTitle':"The Guitar Trainer - Roymond.NET",
+                'jumbotron':"The Guitar Trainer",
+                'active':'None',
+                'gameData': gameData
+            }
+            return render(request, 'guitartrainer/trainer.html', renderDic)
     else:
         formData = GuitarTrainerSetup()
     renderDic = {

@@ -35,5 +35,22 @@ input:focus{
 }
 
 #game {
-  background-color: white;
+  width: 425px;
+  border-radius:20px;
+  background-color: #FFFFFF;
+}
+
+#chordTitle {
+  font-weight:bold;
+  color: black;
+  padding-top: 30px;
+  padding-bottom: -10px;
+  font-size: 250%;
+}
+
+#chordsRemaining {
+  font-weight:bold;
+  color: black;
+  padding-bottom: 30px;
+  font-size: 250%;
 }
