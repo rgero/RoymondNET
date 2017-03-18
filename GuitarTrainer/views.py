@@ -33,7 +33,7 @@ def index(request):
     renderDic = {
         'pageTitle':"The Guitar Trainer - Roymond.NET",
         'jumbotron':"The Guitar Trainer",
-        'active':'None',
+        'active':'guitartrainer',
         'form': formData
     }
     return render(request, 'guitartrainer/index.html', renderDic)

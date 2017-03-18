@@ -61,6 +61,11 @@
                     {% else %}
                         <LI><a href="/PenaltyTracker">The Penalty Tracker</a></LI>
                     {% endif %}
+                    {% if active == "guitartrainer" %}
+                        <LI class="active"><a href="/GuitarTrainer">The Guitar Trainer</a></LI>
+                    {% else %}
+                        <LI><a href="/GuitarTrainer">The Guitar Trainer</a></LI>
+                    {% endif %}
 				</ul>
           {% include "contactMenu.html" %}
 			</div>
