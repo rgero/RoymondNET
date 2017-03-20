@@ -54,17 +54,7 @@
                     {% if active == "projects" %}
                         <LI class="active"><a href="{% url 'projects' %}">Projects</a></LI>
                     {% else %}
-                        <LI><a href="{% url 'projects' %}">Projects</a></LI>
-                    {% endif %}
-                    {% if active == "penaltytracker" %}
-                        <LI class="active"><a href="/PenaltyTracker">The Penalty Tracker</a></LI>
-                    {% else %}
-                        <LI><a href="/PenaltyTracker">The Penalty Tracker</a></LI>
-                    {% endif %}
-                    {% if active == "guitartrainer" %}
-                        <LI class="active"><a href="/GuitarTrainer">The Guitar Trainer</a></LI>
-                    {% else %}
-                        <LI><a href="/GuitarTrainer">The Guitar Trainer</a></LI>
+                        {% include "projectsMenu.html" %}
                     {% endif %}
 				</ul>
           {% include "contactMenu.html" %}

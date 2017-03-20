@@ -1,0 +1,37 @@
+{% load staticfiles %}
+
+<ul class="nav navbar-nav">
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'projects' %}">Projects
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><b><a href="/projects">Projects Home</a></b></li>
+      <hr>
+
+      <!-- Python Projects -->
+      <li><b><a href="{% url 'python' %}">Python</a></b></li>
+      <li><a href="/PenaltyTracker">The Penalty Tracker</a></li>
+      <li><a href="">File Renamer</a></LI>
+      <LI><a href="">IP Notifier</a></LI>
+      <LI><a href="">Link to Spotify</a></LI>
+      <LI><a href="{% url 'python_guitar_notes' %}">Guitar Notes</a></LI>
+
+      <!-- C# Projects-->
+      <li><b><a href="{% url 'c-sharp' %}">C#</a></b><li>
+      <li><a href="{% url 'csharp-selina' %}">Selina No!</a></li>
+      <LI><a href="{% url 'csharp-painbow' %}">Painbow Road</a></li>
+
+      <!-- Java -->
+      <li><b><a href="{% url 'java' %}">Java</a></b><li>
+      <LI><a href="{% url 'java_background_old' %}">The Background Generator</a></LI>
+      <LI><a href="{% url 'java_background' %}">The 2017 Background Generator</a></LI>
+      <LI><a href="{% url 'java_image_processor' %}">The Bad Image Processor</a></LI>
+      <LI><a href ="{% url 'java_guitar_trainer' %}">The Guitar Trainer</a></LI>
+      <LI><a href ="{% url 'java_chord_drawer' %}">The Chord Drawer</a></LI>
+
+      <!-- Javascript -->
+      <li><b>Javascript</b></li>
+      <li><a href="/GuitarTrainer">The Guitar Trainer</a></li>
+    </ul>
+  </li>
+</ul>
