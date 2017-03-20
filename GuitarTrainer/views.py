@@ -16,10 +16,12 @@ def index(request):
             if cleanedData["selectedMinorChords"]:
                 selectedChords += cleanedData["selectedMinorChords"]
 
+            cleanChords = " ".join(selectedChords)
+
             gameData = {
                 "numberOfChords" : numberOfChords,
                 "timeBetween" : timeBetween,
-                "selectedChords" : selectedChords
+                "selectedChords" : cleanChords
             }
             renderDic = {
                 'pageTitle':"The Guitar Trainer - Roymond.NET",

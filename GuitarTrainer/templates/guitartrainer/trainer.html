@@ -10,11 +10,7 @@
     <div id="gameData">
       <div id="numberOfChords" style="display:none">{{gameData.numberOfChords}}</div>
       <div id="timeBetweenChords" style="display:none">{{gameData.timeBetween}}</div>
-      <div id="selectedChords"  style="display:none">
-        {% for i in gameData.selectedChords %}
-          {{i}},
-        {% endfor %}
-      </div>
+      <div id="selectedChords"  style="display:none">{{gameData.selectedChords}}</div>
     </div>
 
     <div id="game">

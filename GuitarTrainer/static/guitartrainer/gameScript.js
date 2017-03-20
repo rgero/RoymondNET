@@ -4,7 +4,7 @@ function playGame(){
   console.log( numberOfChords );
   timer = setInterval(function(){
     chooseChord();
-  }, 1000);
+  }, timeBetween*1000);
 };
 
 function chooseChord(){
@@ -12,7 +12,7 @@ function chooseChord(){
   document.getElementById("chordsRemaining").innerHTML = numberOfChords;
   var chosenIndex = Math.floor(Math.random() * chosenChords.length );
   while (chosenChord == previousCall){
-    while (chosenIndex == chosenChords.length-2){
+    while (chosenIndex == chosenChords.length-1){
       chosenIndex = Math.floor(Math.random() * chosenChords.length );
     }
     chosenIndex = Math.floor(Math.random() * chosenChords.length );
@@ -23,6 +23,8 @@ function chooseChord(){
   if (numberOfChords < 0){
     window.clearTimeout(timer);
     document.getElementById("chordsRemaining").innerHTML = "Game Over";
+    document.getElementById("chord").src= "../../static/guitartrainer/chords/empty.png";
+    document.getElementById("chordTitle").innerHTML = "";
   } else {
     document.getElementById("chord").src= "../../static/guitartrainer/chords/" + chosenChord + ".png";
     document.getElementById("chordTitle").innerHTML = chosenChord;
@@ -34,5 +36,5 @@ var previousCall = "";
 var chosenChord = "";
 var timeBetween = document.getElementById("timeBetweenChords").innerHTML;
 var numberOfChords = document.getElementById("numberOfChords").innerHTML;
-var chosenChords = document.getElementById("selectedChords").innerHTML.split(", ");
+var chosenChords = document.getElementById("selectedChords").innerHTML.split(" ");
 playGame();
