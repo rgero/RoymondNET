@@ -51,11 +51,7 @@
                     {% else %}
                         <LI><a href="{% url 'about' %}">About</a></LI>
                     {% endif %}
-                    {% if active == "projects" %}
-                        <LI class="active"><a href="{% url 'projects' %}">Projects</a></LI>
-                    {% else %}
-                        {% include "projectsMenu.html" %}
-                    {% endif %}
+                    {% include "projectsMenu.html" %}
 				</ul>
           {% include "contactMenu.html" %}
 			</div>
