@@ -28,12 +28,10 @@ def python(request):
     return render(request, 'projects/projectTemp.html', renderDic)
 
 def python_guitar_notes(request):
-    renderDic = {
-        'pageTitle':"Guitar Notes - Roymond.NET",
-        'jumbotron':"Guitar Notes",
-        'active':'projects'
-    }
-    return render(request, 'projects/python/guitar-notes.html', renderDic)
+    dataFile = 'Projects/static/projects/python/guitar-notes/guitar-notes.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def java(request):
     dataFile = 'Projects/static/projects/java/index.json'

@@ -92,7 +92,7 @@
           <tr>
             {% for dataPoint in gallery.0.imgData %}
               {% for alt,img in dataPoint.1.items %}
-                <td><a href="{{static}}{{img}}" target="_blank" alt="{{alt}}"><img src="{{static}}{{img}}" alt="{{alt}}" width={{gallery.0.settings.width}} height={{gallery.0.settings.height}}></td>
+                <td style="padding:10px"><a href="{{static}}{{img}}" target="_blank" alt="{{alt}}"><img src="{{static}}{{img}}" alt="{{alt}}" width={{gallery.0.settings.width}} height={{gallery.0.settings.height}}></td>
               {% endfor %}
             {% endfor %}
           </tr>
