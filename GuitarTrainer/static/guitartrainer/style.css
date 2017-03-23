@@ -65,5 +65,8 @@ input:focus{
   border:0px;
   font-weight:bold;
   color: black;
-  font-size: 125%;
+}
+
+#chordsRemDiv{
+  padding-bottom:15px;
 }

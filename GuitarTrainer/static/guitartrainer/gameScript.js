@@ -12,12 +12,18 @@ function startCountdown(){
 
 function playGame(){
   chooseChord();
+  var elapsedTime = 0;
   timer = setInterval(function(){
-    chooseChord();
+    elapsedTime += 10;
+    document.getElementById("timeRemaining").innerHTML = ((timeBetween*1000-elapsedTime)/1000).toFixed(2);
+    if (elapsedTime >= timeBetween*1000){
+      chooseChord();
+      elapsedTime = 0;
+    }
     if( numberOfChords < 0){
       window.clearInterval(timer);
     }
-  }, timeBetween*1000);
+  }, 10);
 };
 
 function chooseChord(){
@@ -49,5 +55,7 @@ var chosenChord = "";
 var timeBetween = document.getElementById("timeBetweenChords").innerHTML;
 var numberOfChords = document.getElementById("numberOfChords").innerHTML;
 var chosenChords = document.getElementById("selectedChords").innerHTML.split(" ");
+document.getElementById("chordTitle").innerHTML = "Starting in...";
+document.getElementById("chord").src= "../../static/guitartrainer/chords/empty.png";
 document.getElementById("chordsRemaining").innerHTML = numberOfChords;
 startCountdown();
