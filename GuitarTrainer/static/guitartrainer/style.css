@@ -61,9 +61,9 @@ input:focus{
   font-size: 250%;
 }
 
-#chordsRemaining {
+#chordsRemainingTable {
+  border:0px;
   font-weight:bold;
   color: black;
-  padding-bottom: 30px;
-  font-size: 250%;
+  font-size: 125%;
 }

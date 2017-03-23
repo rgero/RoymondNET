@@ -1,14 +1,26 @@
-function playGame(){
+function startCountdown(){
+  var countdown = 3;
+  var startTimer = setInterval(function(){
+    document.getElementById("chordTitle").innerHTML = countdown;
+    countdown--;
+    if (countdown < 0){
+      window.clearInterval(startTimer);
+      playGame();
+    }
+  }, 1000);
+}
 
-  console.log( timeBetween );
-  console.log( numberOfChords );
+function playGame(){
+  chooseChord();
   timer = setInterval(function(){
     chooseChord();
+    if( numberOfChords < 0){
+      window.clearInterval(timer);
+    }
   }, timeBetween*1000);
 };
 
 function chooseChord(){
-  console.log("called");
   document.getElementById("chordsRemaining").innerHTML = numberOfChords;
   var chosenIndex = Math.floor(Math.random() * chosenChords.length );
   while (chosenChord == previousCall){
@@ -37,4 +49,5 @@ var chosenChord = "";
 var timeBetween = document.getElementById("timeBetweenChords").innerHTML;
 var numberOfChords = document.getElementById("numberOfChords").innerHTML;
 var chosenChords = document.getElementById("selectedChords").innerHTML.split(" ");
-playGame();
+document.getElementById("chordsRemaining").innerHTML = numberOfChords;
+startCountdown();

@@ -2,6 +2,15 @@ function playGame(){
 
   console.log( timeBetween );
   console.log( numberOfChords );
+  var countdown = 3;
+  var startTimer = setInterval(function(){
+    console.log(countdown);
+    document.getElementById("chordTitle").innerHTML = countdown;
+    countdown--;
+    if (countdown < 0){
+      window.clearInterval(startTimer);
+    }
+  }, 1000);
   timer = setInterval(function(){
     chooseChord();
   }, timeBetween*1000);
