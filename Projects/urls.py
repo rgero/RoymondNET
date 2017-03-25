@@ -9,7 +9,6 @@ urlpatterns = [
     url(r'^(?i)python$', views.python, name="python"),
     url(r'^(?i)python/guitar-notes$', views.python_guitar_notes, name="python_guitar_notes"),
     url(r'^(?i)python/roymondnet$', views.roymond_net, name="roymond_net"),
-    url(r'^(?i)python/file_renamer$', views.python_file_renamer, name="python_file_renamer"),
     url(r'^(?i)python/ip_notifier$', views.python_ip_notifier, name="python_ip_notifier"),
     url(r'^(?i)python/last_to_spotify$', views.python_last_to_spotify, name="python_last_to_spotify"),
 

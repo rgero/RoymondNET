@@ -12,7 +12,13 @@
   			{"unordered_list": [" CodeAcademy's Python Course - <a href=\"https://www.codecademy.com/learn/python\" target=\"_blank\">Link to Course</a>",
                             " Learn Python The Hard Way - <a href=\"http://learnpythonthehardway.org/\" target=\"_blank\">Link to Course</a>"]},
   			{"h3": ["None","Projects"]},
-  			{"unordered_list": ["The Penalty Tracker", "Roymond.NET", "File Renamer", "IP Notifier", "Link to Spotify", "Guitar Notes"]}
+  			{"unordered_list": [
+          "The Penalty Tracker",
+          "Roymond.NET",
+          "IP Notifier",
+          "Link to Spotify",
+          "Guitar Notes"
+          ]}
   		]
   	]
 }

@@ -43,15 +43,6 @@ def roymond_net(request):
     }
     return comingsoon(request, renderDic)
 
-def python_file_renamer(request):
-    renderDic = {
-        'pageTitle':"The File Renamer - Roymond.NET",
-        'jumbotron':"The File Renamer",
-        'active':'projects',
-        'Header': 'Coming soon!'
-    }
-    return comingsoon(request, renderDic)
-
 def python_ip_notifier(request):
     renderDic = {
         'pageTitle':"The IP Notifier - Roymond.NET",
