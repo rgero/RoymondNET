@@ -13,11 +13,11 @@
                             " Learn Python The Hard Way - <a href=\"http://learnpythonthehardway.org/\" target=\"_blank\">Link to Course</a>"]},
   			{"h3": ["None","Projects"]},
   			{"unordered_list": [
-          "The Penalty Tracker",
-          "Roymond.NET",
-          "IP Notifier",
-          "Link to Spotify",
-          "Guitar Notes"
+              "<a href='/penaltytracker'>The Penalty Tracker</a>",
+              "<a href='python/roymondnet'>Roymond.NET</a>",
+              "<a href='python/ip_notifier'>IP Notifier</a>",
+              "<a href='python/last_to_spotify'>Last.FM to Spotify</a>",
+              "<a href='python/guitar-notes'>Guitar Notes</a>"
           ]}
   		]
   	]
