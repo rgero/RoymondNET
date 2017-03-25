@@ -93,13 +93,10 @@ def csharp_painbow(request):
     return render(request, 'projects/c-sharp/painbow-road.html', renderDic)
 
 def csharp_file_renamer(request):
-    renderDic = {
-        'pageTitle':"The File Renamer - Roymond.NET",
-        'jumbotron':"The File Renamer",
-        'active':'projects',
-        'Header': 'Coming soon!'
-    }
-    return comingsoon(request, renderDic)
+    dataFile = 'Projects/static/projects/c-sharp/file-renamer/file-renamer.json'
+    renderDic = readJSON(dataFile)
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp.html', renderDic)
 
 def csharp_laser_defender(request):
     renderDic = {
