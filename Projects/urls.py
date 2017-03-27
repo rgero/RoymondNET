@@ -7,6 +7,7 @@ urlpatterns = [
 
     #Python
     url(r'^(?i)python$', views.python, name="python"),
+    url(r'^(?i)python_test$', views.python_test, name="python_test"),
     url(r'^(?i)python/guitar-notes$', views.python_guitar_notes, name="python_guitar_notes"),
     url(r'^(?i)python/roymondnet$', views.roymond_net, name="roymond_net"),
     url(r'^(?i)python/ip_notifier$', views.python_ip_notifier, name="python_ip_notifier"),

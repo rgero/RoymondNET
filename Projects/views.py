@@ -9,6 +9,11 @@ def readJSON(file):
     data = json.load(data)
     return data
 
+def readFile(filePath):
+    data = open(filePath, 'r')
+    data = data.read()
+    return data
+
 def projects(request):
     dataFile = 'Projects/static/projects/index.json'
     renderDic = readJSON(dataFile)
@@ -27,6 +32,18 @@ def python(request):
     renderDic = readJSON(dataFile)
     renderDic['static'] = static(".")
     return render(request, 'projects/projectTemp.html', renderDic)
+
+def python_test(request):
+    dataFile = 'Projects/static/projects/python/Python_Index.md'
+    content = readFile(dataFile)
+    renderDic = {
+      "pageTitle" : "Python Projects - Roymond.NET",
+      "jumbotron" : "Python Projects",
+      "active" : "projects",
+      "pageContent": content
+    }
+    renderDic['static'] = static(".")
+    return render(request, 'projects/projectTemp2.html', renderDic)
 
 def python_guitar_notes(request):
     dataFile = 'Projects/static/projects/python/guitar-notes/guitar-notes.json'
@@ -70,10 +87,19 @@ def csharp(request):
     return render(request, 'projects/projectTemp.html', renderDic)
 
 def csharp_selina(request):
-    dataFile = 'Projects/static/projects/c-sharp/selina.json'
-    renderDic = readJSON(dataFile)
+    dataFile = 'Projects/static/projects/c-sharp/selina_no.md'
+    content = readFile(dataFile)
+    renderDic = {
+    	"pageTitle" : "Selina No! - Roymond.NET",
+    	"jumbotron" : "Selina No!",
+    	"active" : "projects",
+    	"quickfacts": {
+    		"GitHub": ["external", "https://github.com/rgero/SelinaNo"]
+    	},
+    	"pageContent": content
+    }
     renderDic['static'] = static(".")
-    return render(request, 'projects/projectTemp.html', renderDic)
+    return render(request, 'projects/projectTemp2.html', renderDic)
 
 def csharp_painbow(request):
     renderDic = {
