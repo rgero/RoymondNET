@@ -14,6 +14,15 @@ def readFile(filePath):
     data = data.read()
     return data
 
+def initDic(header, content):
+    renderDic = {
+      "pageTitle" : header + " - Roymond.NET",
+      "jumbotron" : header,
+      "active" : "projects",
+      "pageContent": content
+    }
+    return renderDic
+
 def projects(request):
     dataFile = 'Projects/static/projects/index.json'
     renderDic = readJSON(dataFile)
@@ -36,12 +45,7 @@ def python(request):
 def python_test(request):
     dataFile = 'Projects/static/projects/python/Python_Index.md'
     content = readFile(dataFile)
-    renderDic = {
-      "pageTitle" : "Python Projects - Roymond.NET",
-      "jumbotron" : "Python Projects",
-      "active" : "projects",
-      "pageContent": content
-    }
+    renderDic = initDic(header, content)
     renderDic['static'] = static(".")
     return render(request, 'projects/projectTemp2.html', renderDic)
 
@@ -110,10 +114,11 @@ def csharp_painbow(request):
     return render(request, 'projects/c-sharp/painbow-road.html', renderDic)
 
 def csharp_file_renamer(request):
-    dataFile = 'Projects/static/projects/c-sharp/file-renamer/file-renamer.json'
-    renderDic = readJSON(dataFile)
+    dataFile = 'Projects/static/projects/c-sharp/file-renamer/file_renamer.md'
+    content = readFile(dataFile)
+    renderDic = initDic("File Renamer", content)
     renderDic['static'] = static(".")
-    return render(request, 'projects/projectTemp.html', renderDic)
+    return render(request, 'projects/projectTemp2.html', renderDic)
 
 def csharp_laser_defender(request):
     renderDic = {

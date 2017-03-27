@@ -3,6 +3,7 @@
 {% block content %}
 {% load staticfiles %}
 {% load markdown_deux_tags %}
+<link rel="stylesheet" href='{% static "projects\projects.css" %}'>
 
   {% if pageContent %}
     {{ pageContent|markdown }}
