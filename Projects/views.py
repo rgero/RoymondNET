@@ -45,10 +45,10 @@ def languageHistory(request, language):
     else:
         return HttpResponse("FUCK OFF")
 
-def projectPage(request, language, projectName):
-    projectPages = ProjectPage.objects.filter(pageTitle__iexact=projectName)
+def projectPage(request, language, slug):
+    projectPages = ProjectPage.objects.filter(slug__iexact=slug)
     if projectPages:
-        projectPage = projectPages.get(pageTitle__iexact=projectName)
+        projectPage = projectPages.get(slug__iexact=slug)
         renderDic = {
             'jumbotron': projectPage.pageTitle,
             'pageTitle': projectPage.pageTitle + " - Roymond.net",
