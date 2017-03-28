@@ -21,7 +21,7 @@ def index(request):
             if languageName.lower() == j.language.language.lower():
                languageList.append(j)
         renderDic["projects"].append( [languageName, languageList])
-    return render(request, 'projects\projTemplate.html', renderDic)
+    return render(request, 'projects\project_index.html', renderDic)
 
 def languageHistory(request, language):
     languagePage = Language.objects.filter(language__iexact=language)
@@ -44,3 +44,16 @@ def languageHistory(request, language):
         return render(request, 'projects\languageTemp.html', renderDic)
     else:
         return HttpResponse("FUCK OFF")
+
+def projectPage(request, language, projectName):
+    projectPages = ProjectPage.objects.filter(pageTitle__iexact=projectName)
+    if projectPages:
+        projectPage = projectPages.get(pageTitle__iexact=projectName)
+        renderDic = {
+            'jumbotron': projectPage.pageTitle,
+            'pageTitle': projectPage.pageTitle + " - Roymond.net",
+            'content': projectPage.content
+          }
+        return render(request, 'projects\projectTemp.html', renderDic)
+    else:
+        return HttpResponse("Sorry")

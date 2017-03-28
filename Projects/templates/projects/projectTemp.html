@@ -8,14 +8,4 @@
   {% else %}
       <p>Info coming soon</p>
   {% endif %}
-
-  {% if projects %}
-    <h3>Projects</h3>
-    <ul>
-      {% for item in projects %}
-      <li><a href="{% url 'projectPage' language|lower item.slug %}">{{item}}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
 {% endblock %}
