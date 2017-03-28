@@ -30,8 +30,17 @@ def languageHistory(request, language):
         renderDic = {
             'jumbotron': languagePage.language,
             'pageTitle': languagePage.language + " - Roymond.net",
+            'language' : language
           }
         renderDic['content'] = languagePage.content
+
+        # Now to find the projects.
+        listOfPages = ProjectPage.objects.order_by("pageTitle")
+        listOfProjects = []
+        for i in listOfPages:
+            if language.lower() == i.language.language.lower():
+               listOfProjects.append(i)
+        renderDic['projects'] = listOfProjects
         return render(request, 'projects\languageTemp.html', renderDic)
     else:
         return HttpResponse("FUCK OFF")

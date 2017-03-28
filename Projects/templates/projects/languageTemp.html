@@ -2,11 +2,20 @@
 
 {% block content %}
 {% load staticfiles %}
-
+{% load markdown_deux_tags %}
   {% if content %}
-    {{content}}
+    {{content|markdown}}
   {% else %}
       <p>Info coming soon</p>
+  {% endif %}
+
+  {% if projects %}
+    <h3>Projects</h3>
+    <ul>
+      {% for item in projects %}
+      <li><a href="{{language|lower}}/{{item.slug}}">{{item}}</a></li>
+      {% endfor %}
+    </ul>
   {% endif %}
 
 {% endblock %}

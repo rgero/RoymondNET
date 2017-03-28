@@ -14,7 +14,7 @@ class ProjectPage(models.Model):
     slug = models.CharField(max_length=200)
     language = models.ForeignKey(Language)
     content = models.TextField()
-    images = models.ImageField()
+    images = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.pageTitle
