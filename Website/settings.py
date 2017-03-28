@@ -33,7 +33,6 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'personal.apps.PersonalConfig',
-    'Projects.apps.ProjectsConfig',
     'PenaltyTracker.apps.PenaltyTrackerConfig',
     'GuitarTrainer.apps.GuitartrainerConfig',
     'django.contrib.admin',
