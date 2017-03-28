@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+  {% if projects %}
+      {% for language in projects %}
+        <h3><a href="{% url 'languageHistory' language.0|lower %}">{{language.0}}</a></h3>
+        <ul>
+        {% for item in language.1 %}
+          <li><a href="{{language.0|lower}}/{{item.slug}}">{{item}}</a></li>
+        {% endfor %}
+        </ul>
+      {% endfor %}
+
+  {% else %}
+      <p>No Projects are Found.</p>
+  {% endif %}
+
+{% endblock %}

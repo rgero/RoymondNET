@@ -1,0 +1,12 @@
+{% extends "template.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+  {% if content %}
+    {{content}}
+  {% else %}
+      <p>Info coming soon</p>
+  {% endif %}
+
+{% endblock %}
