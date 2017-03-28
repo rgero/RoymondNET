@@ -16,10 +16,14 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 
+DEBUG = True
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^', include('personal.urls')),
     url(r'^(?i)PenaltyTracker/', include('PenaltyTracker.urls'), name="ThePenaltyTracker"),
     url(r'^(?i)projects/', include('Projects.urls'), name="Projects"),
     url(r'^(?i)GuitarTrainer/', include('GuitarTrainer.urls'), name="GuitarTrainer")
 ]
+
+if DEBUG == True:
+    urlpatterns.append(url(r'^admin/', admin.site.urls))
