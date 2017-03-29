@@ -16,6 +16,7 @@ class ProjectPage(models.Model):
     # Still need quick facts.
     content = models.TextField()
     images = models.TextField(null=True, blank=True)
+    related_projects = models.ManyToManyField("self", blank=True, symmetrical=False)
 
     def __str__(self):
         return self.pageTitle

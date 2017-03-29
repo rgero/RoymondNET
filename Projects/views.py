@@ -54,16 +54,14 @@ def projectPage(request, language, slug):
             'pageTitle': projectPage.pageTitle + " - Roymond.net",
             'slug': projectPage.slug,
             'language' : projectPage.language.language,
-            'content': projectPage.content
-
+            'content': projectPage.content,
+            'related_projects' : projectPage.related_projects.all()
           }
 
         # Processing image List
         if projectPage.images != "":
             imageList = projectPage.images.split("\r\n")
-            renderDic['images'] = imageList
-
-
+            renderDic['images'] = imageList 
         return render(request, 'projects/projectTemp.html', renderDic)
     else:
         return HttpResponse("Sorry")

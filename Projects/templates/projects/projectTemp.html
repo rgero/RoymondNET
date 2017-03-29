@@ -23,4 +23,14 @@
       </table>
     </center>
   {% endif %}
+
+  {% if related_projects %}
+    <h3>Related Projects</h3>
+    Here's a list of projects referenced above:
+    <ul>
+      {% for i in related_projects %}
+        <li><a href="{% url 'projectPage' i.language|lower i.slug %}">{{i.pageTitle}}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 {% endblock %}
