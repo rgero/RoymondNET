@@ -21,7 +21,7 @@ def index(request):
             if languageName.lower() == j.language.language.lower():
                languageList.append(j)
         renderDic["projects"].append( [languageName, languageList])
-    return render(request, 'projects\project_index.html', renderDic)
+    return render(request, 'projects/project_index.html', renderDic)
 
 def languageHistory(request, language):
     languagePage = Language.objects.filter(language__iexact=language)
@@ -41,7 +41,7 @@ def languageHistory(request, language):
             if language.lower() == i.language.language.lower():
                listOfProjects.append(i)
         renderDic['projects'] = listOfProjects
-        return render(request, 'projects\languageTemp.html', renderDic)
+        return render(request, 'projects/languageTemp.html', renderDic)
     else:
         return HttpResponse("FUCK OFF")
 
@@ -52,8 +52,18 @@ def projectPage(request, language, slug):
         renderDic = {
             'jumbotron': projectPage.pageTitle,
             'pageTitle': projectPage.pageTitle + " - Roymond.net",
+            'slug': projectPage.slug,
+            'language' : projectPage.language.language,
             'content': projectPage.content
+
           }
-        return render(request, 'projects\projectTemp.html', renderDic)
+
+        # Processing image List
+        if projectPage.images != "":
+            imageList = projectPage.images.split("\r\n")
+            renderDic['images'] = imageList
+
+
+        return render(request, 'projects/projectTemp.html', renderDic)
     else:
         return HttpResponse("Sorry")

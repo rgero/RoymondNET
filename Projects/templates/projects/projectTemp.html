@@ -8,4 +8,19 @@
   {% else %}
       <p>Info coming soon</p>
   {% endif %}
+
+  {% if images %}
+    <h3>Images</h3>
+    <center>
+      <table border="0px">
+        <tr>
+          {% for img in images %}
+            {% with 'projects/'|add:language|add:"/"|add:slug|add:"/"|add:img as img_path %}
+              <td><img src="{% static img_path %}" width=150px height=150px></td>
+            {% endwith %}
+          {% endfor %}
+        </tr>
+      </table>
+    </center>
+  {% endif %}
 {% endblock %}
