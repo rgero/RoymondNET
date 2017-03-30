@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+
+{% block content %}
+  {% load staticfiles %}
+
+  <center>
+    <h1>Error</h1>
+    <div>
+      The page you have requested ( {{request.path}} ) is not valid. Please try again. If you believe this to be an incorrect error, please contact Roy.
+    </div>
+  </center>
+
+{% endblock %}

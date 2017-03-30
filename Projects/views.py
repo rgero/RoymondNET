@@ -43,7 +43,7 @@ def languageHistory(request, language):
         renderDic['projects'] = listOfProjects
         return render(request, 'projects/languageTemp.html', renderDic)
     else:
-        return HttpResponse("FUCK OFF")
+        return render(request, '404.html', {'jumbotron': 'Error 404'})
 
 def projectPage(request, language, slug):
     projectPages = ProjectPage.objects.filter(slug__iexact=slug)
@@ -66,4 +66,4 @@ def projectPage(request, language, slug):
             renderDic['images'] = imageList
         return render(request, 'projects/projectTemp.html', renderDic)
     else:
-        return HttpResponse("Sorry")
+        return render(request, '404.html', {'jumbotron': 'Error 404'})
