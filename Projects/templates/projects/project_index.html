@@ -3,6 +3,12 @@
 {% block content %}
 {% load staticfiles %}
 
+  <p>From here you can see the wide range of projects I have been working on as well as the ones I have completed. They will organized by the programming languages they were developed in. As this website nears completion, each project will start to have its own dedicated page with links to relevant blog posts outlining the process in which they were developed.</p>
+
+  <p>To read about how I originally learned the language in question, click the heading</p>
+
+  <p>Please note, I do not intend for this page to be a highlight reel. If anything, it is more to demonstrate how I've progressed over the years</p>
+
   {% if projects %}
       {% for language in projects %}
         <h3><a href="{% url 'languageHistory' language.2|lower %}">{{language.0}}</a></h3>
