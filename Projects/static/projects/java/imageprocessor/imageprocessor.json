@@ -1,0 +1,40 @@
+{
+  "pageTitle" : "The Image Processor - Roymond.NET",
+  "jumbotron" : "The Image Processor",
+  "active" : "projects",
+  "quickfacts": {
+		"GitHub": ["external", "https://github.com/rgero/ImageProcessor"],
+		"JAR File": ["internal_file", "projects/java/jar_files/BadImageProcessing.jar"]
+	},
+  "pageContent":
+  [
+    [ {"h3" : ["None","About the Project"]},
+      {"p" : ["None","This project was inspired by the fact that people put so much effort into making their pictures look 'better' through the use of filters. I’d often catch my friends spending minutes adding these filters to their photos and often the end result just left me wishing I could get the original picture."]},
+      {"p" : ["None","This led me to an idea. What if there was a program that added these filters to pictures, but rather than intending to make the pictures better, it set out to make them worse."]},
+      {"p" : ["None","It was a very tongue in cheek project, but some of my friends actually really liked some of the results so I kept working on it to make it a more complete project."]},
+      {"h3" : ["None","Iterations"]},
+      {"p" : ["None","This project was pretty much one and done. If I were to continue working on it, I’d definitely would add some more features to it. Right now the biggest flaw that it has is that it is just essentially putting circles over the existing image, so if you have large enough circles you will see a lot of the underlying image in the empty spaces that circles could not fill."]},
+      {"h3" : ["None","Lessons Learned"]},
+      {"unordered_list" : ["How to make a GUI using JFrame", "How to use Source Control within IntelliJ - I regularly use source control, but never within my IDE", "How to distribute a java project with a JAR file."]}
+    ]
+  ],
+  "gallery":
+  [
+    {	"settings": {
+			"width": 150,
+			"height": 150,
+			"maxRow": 4
+		},
+		  "imgData": [
+  			[0, {
+  				"The UI": "projects/java/imageprocessor/UI.png"
+  			}],
+  			[1, {
+  				"Ling Example": "projects/java/imageprocessor/Ling_Example.png"
+  			}],
+  			[2, {
+  				"Blue Angel Example": "projects/java/imageprocessor/BlueAngel_Example.png"
+  			}]
+	    ]
+    }]
+}
