@@ -23,7 +23,7 @@
       <table border="0px">
         <tr>
           {% for img in images %}
-            {% with 'projects/'|add:language|lower|add:"/"|add:slug|add:"/"|add:img as img_path %}
+            {% with 'projects/'|add:language.slug|lower|add:"/"|add:slug|add:"/"|add:img as img_path %}
               <td><a href="{% static img_path %}" target="_blank"><img src="{% static img_path %}" width=150px height=150px></a></td>
             {% endwith %}
           {% endfor %}
@@ -44,7 +44,7 @@
     Here's a list of projects referenced above:
     <ul>
       {% for i in related_projects %}
-        <li><a href="{% url 'projectPage' i.language|lower i.slug %}">{{i.pageTitle}}</a></li>
+        <li><a href="{% url 'projectPage' i.language.slug|lower i.slug %}">{{i.pageTitle}}</a></li>
       {% endfor %}
     </ul>
   {% endif %}

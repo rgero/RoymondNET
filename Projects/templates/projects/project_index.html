@@ -5,10 +5,10 @@
 
   {% if projects %}
       {% for language in projects %}
-        <h3><a href="{% url 'languageHistory' language.0|lower %}">{{language.0}}</a></h3>
+        <h3><a href="{% url 'languageHistory' language.2|lower %}">{{language.0}}</a></h3>
         <ul>
         {% for item in language.1 %}
-          <li><a href="{% url 'projectPage' language.0|lower item.slug %}">{{item}}</a></li>
+          <li><a href="{% url 'projectPage' language.2|lower item.slug %}">{{item}}</a></li>
         {% endfor %}
         </ul>
       {% endfor %}

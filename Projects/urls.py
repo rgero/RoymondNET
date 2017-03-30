@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name="projects"),
-    url(r'^(?i)(?P<language>[^\/]*$)', views.languageHistory, name='languageHistory'),
-    url(r'^(?i)(?P<language>[^\/]*)/(?P<slug>[^\/]*$)', views.projectPage, name='projectPage')
+    url(r'^(?i)(?P<languageSlug>[^\/]*$)', views.languageHistory, name='languageHistory'),
+    url(r'^(?i)(?P<languageSlug>[^\/]*)/(?P<slug>[^\/]*$)', views.projectPage, name='projectPage')
 ]
