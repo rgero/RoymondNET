@@ -24,7 +24,7 @@
         <tr>
           {% for img in images %}
             {% with 'projects/'|add:language|lower|add:"/"|add:slug|add:"/"|add:img as img_path %}
-              <td><img src="{% static img_path %}" width=150px height=150px></td>
+              <td><a href="{% static img_path %}" target="_blank"><img src="{% static img_path %}" width=150px height=150px></a></td>
             {% endwith %}
           {% endfor %}
         </tr>
