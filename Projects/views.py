@@ -34,7 +34,7 @@ def languageHistory(request, languageSlug):
             'jumbotron': language + " Projects",
             'pageTitle': language + " Projects - Roymond.net",
             'language' : language,
-            'languageSlug' : slug
+            'languageSlug' : languagePage.slug
           }
         renderDic['content'] = languagePage.content
 
@@ -57,7 +57,7 @@ def projectPage(request, languageSlug, slug):
             'jumbotron': projectPage.pageTitle,
             'pageTitle': projectPage.pageTitle + " - Roymond.net",
             'slug': projectPage.slug,
-            'languageSlug' : slug,
+            'languageSlug' : projectPage.language.slug,
             'language' : projectPage.language.language,
             'content': projectPage.content,
             'related_projects' : projectPage.related_projects.all(),
