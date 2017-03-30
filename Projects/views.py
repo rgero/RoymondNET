@@ -9,7 +9,8 @@ from .models import *
 def index(request):
     renderDic = {
         'jumbotron': "Projects",
-        'pageTitle': 'Projects - Roymond.net'
+        'pageTitle': 'Projects - Roymond.net',
+        'active' : 'projects'
       }
     renderDic["projects"] = []
     listOfPages = ProjectPage.objects.order_by("pageTitle")
@@ -30,7 +31,8 @@ def languageHistory(request, language):
         renderDic = {
             'jumbotron': languagePage.language,
             'pageTitle': languagePage.language + " - Roymond.net",
-            'language' : language
+            'language' : language,
+            'active' : 'projects'
           }
         renderDic['content'] = languagePage.content
 
@@ -57,7 +59,8 @@ def projectPage(request, language, slug):
             'content': projectPage.content,
             'related_projects' : projectPage.related_projects.all(),
             'quick_facts' : projectPage.quick_facts,
-            'external_media' : projectPage.external_media
+            'external_media' : projectPage.external_media,
+            'active' : 'projects'
           }
 
         # Processing image List

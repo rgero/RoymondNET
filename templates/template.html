@@ -38,7 +38,7 @@
 				</button>
 
 			</div>
-			<div class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<!--Be sure to show which page is active by adding the class "Active" to the list option-->
                     {% if active == None %}
@@ -51,7 +51,21 @@
                     {% else %}
                         <LI><a href="{% url 'about' %}">About</a></LI>
                     {% endif %}
-                    {% include "projectsMenu.html" %}
+                    {% if active == "projects" %}
+                        <LI class="active"><a href="{% url 'projects' %}">Projects</a></LI>
+                    {% else %}
+                        <LI><a href="{% url 'projects' %}">Projects</a></LI>
+                    {% endif %}
+                    {% if active == "penaltytracker" %}
+                        <LI class="active"><a href="/PenaltyTracker">The Penalty Tracker</a></LI>
+                    {% else %}
+                        <LI><a href="/PenaltyTracker">The Penalty Tracker</a></LI>
+                    {% endif %}
+                    {% if active == "guitartrainer" %}
+                        <LI class="active"><a href="/GuitarTrainer">The Guitar Trainer</a></LI>
+                    {% else %}
+                        <LI><a href="/GuitarTrainer">The Guitar Trainer</a></LI>
+                    {% endif %}
 				</ul>
           {% include "contactMenu.html" %}
 			</div>
