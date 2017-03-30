@@ -55,13 +55,15 @@ def projectPage(request, language, slug):
             'slug': projectPage.slug,
             'language' : projectPage.language.language,
             'content': projectPage.content,
-            'related_projects' : projectPage.related_projects.all()
+            'related_projects' : projectPage.related_projects.all(),
+            'quick_facts' : projectPage.quick_facts,
+            'external_media' : projectPage.external_media
           }
 
         # Processing image List
         if projectPage.images != "":
             imageList = projectPage.images.split("\r\n")
-            renderDic['images'] = imageList 
+            renderDic['images'] = imageList
         return render(request, 'projects/projectTemp.html', renderDic)
     else:
         return HttpResponse("Sorry")

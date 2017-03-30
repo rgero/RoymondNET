@@ -3,8 +3,16 @@
 {% block content %}
 {% load staticfiles %}
 {% load markdown_deux_tags %}
+
+{% if quick_facts %}
+  <h3>Quick Facts</h3>
+  <center>
+    {{quick_facts}}
+  </center>
+{% endif %}
+
   {% if content %}
-    {{content|markdown}}
+    {{content|markdown|safe}}
   {% else %}
       <p>Info coming soon</p>
   {% endif %}
@@ -24,6 +32,13 @@
     </center>
   {% endif %}
 
+  {% if external_media %}
+    <h3>External Media</h3>
+    <center>
+      {{external_media|safe}}
+    </center>
+  {% endif %}
+
   {% if related_projects %}
     <h3>Related Projects</h3>
     Here's a list of projects referenced above:
@@ -33,4 +48,6 @@
       {% endfor %}
     </ul>
   {% endif %}
+
+
 {% endblock %}
