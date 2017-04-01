@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'personal.apps.PersonalConfig',
+    'Blog.apps.BlogConfig',
     'PenaltyTracker.apps.PenaltyTrackerConfig',
     'Projects.apps.ProjectsConfig',
     'GuitarTrainer.apps.GuitartrainerConfig',
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'markdown_deux'
+    'markdown_deux',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
