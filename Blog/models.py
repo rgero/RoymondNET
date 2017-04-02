@@ -4,11 +4,15 @@ from django.utils import timezone
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=200)
-    # Need an automated slug.
+    slug = models.SlugField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Post(models.Model):
     post_title = models.CharField(max_length=200, help_text="This is the title of the project")
+    slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField(help_text="Markdown Enabled.")
     author = models.ForeignKey('auth.User')
     created_date = models.DateTimeField(default=timezone.now)

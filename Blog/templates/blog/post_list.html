@@ -4,15 +4,16 @@
 {% load staticfiles %}
 {% load markdown_deux_tags %}
 
-<div>
-    <h1><a href="/">Blog</a></h1>
-</div>
-
 {% for post in posts %}
     <div>
-        <p>published: {{ post.published_date }}</p>
         <h1><a href="">{{ post.post_title }}</a></h1>
+        <p>published: {{ post.published_date }}</p>
         <p>{{ post.content|markdown|safe }}</p>
+        <div>
+          {% for category in post.categories.all %}
+            <a href="{% url 'category_list' category.slug|lower %}">{{category}}</a>
+          {% endfor %}
+        </div>
     </div>
     <hr>
 {% endfor %}
