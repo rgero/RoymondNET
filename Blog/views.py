@@ -7,7 +7,8 @@ def post_list(request):
     renderDic = {
         'jumbotron': "The Blog",
         'pageTitle': "The Blog - Roymond.net",
-        'posts' : posts
+        'posts' : posts,
+        'active': 'blog'
     }
     return render(request, 'blog/post_list.html', renderDic)
 
@@ -17,7 +18,8 @@ def category_list(request, catName):
     renderDic = {
         'jumbotron': category.name,
         'pageTitle': "Posts with the '" + category.name + "' tag - Roymond.NET",
-        'posts' : posts
+        'posts' : posts,
+        'active': 'blog'
     }
     return render(request, 'blog/category_list.html', renderDic)
 
@@ -27,6 +29,7 @@ def post_detail(request, postSlug):
     renderDic = {
         'jumbotron' : post.post_title,
         'pageTitle' : post.post_title,
-        'post' : post
+        'post' : post,
+        'active': 'blog'
     }
     return render(request, 'blog/post_detail.html', renderDic)

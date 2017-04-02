@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^(?i)PenaltyTracker/', include('PenaltyTracker.urls'), name="ThePenaltyTracker"),
     url(r'^(?i)projects/', include('Projects.urls'), name="Projects"),
     url(r'^(?i)GuitarTrainer/', include('GuitarTrainer.urls'), name="GuitarTrainer"),
-    url(r'^(?i)blog/', include('Blog.urls'), name="Blog")
+    url(r'^(?i)blog/', include('Blog.urls'), name="blog")
 ]
 
 if DEBUG == True:
