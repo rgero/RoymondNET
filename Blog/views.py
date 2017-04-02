@@ -20,3 +20,13 @@ def category_list(request, catName):
         'posts' : posts
     }
     return render(request, 'blog/category_list.html', renderDic)
+
+def post_detail(request, postSlug):
+    post = Post.objects.filter(slug__iexact=postSlug).get()
+    print(post.content)
+    renderDic = {
+        'jumbotron' : post.post_title,
+        'pageTitle' : post.post_title,
+        'post' : post
+    }
+    return render(request, 'blog/post_detail.html', renderDic)
