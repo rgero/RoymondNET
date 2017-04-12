@@ -134,12 +134,16 @@ def performSearch(query):
   conn = sqlite3.connect(dblocation)
   cursor = conn.cursor()
 
+  tableName = query["seasonType"]
 
-  executionString = "SELECT * FROM PenaltyTracker "
+  executionString = "SELECT * FROM " + tableName
   where_string = constructWHERE(query)
   if where_string!="":
       executionString += "WHERE " + where_string
 
   executionString += " ORDER BY gameDate"
-  results = cursor.execute(executionString).fetchall()
-  return results
+  try:
+      results = cursor.execute(executionString).fetchall()
+      return results
+  except:
+    return None
