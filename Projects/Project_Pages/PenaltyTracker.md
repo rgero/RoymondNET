@@ -14,3 +14,6 @@ Once it has obtained all of the penalty data, it uses the SQLite library to put 
 * How I get the data
 * How I display the data to the user
 * Future Improvements
+  * Playoffs vs Regular Season
+  * How to access past seasons
+  * Emailing when the script fails to run.
