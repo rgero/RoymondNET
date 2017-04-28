@@ -11,6 +11,11 @@ Once it has obtained all of the penalty data, it uses the SQLite library to put 
 ### Design Considerations
 
 * Separate Databases
+
+When I first started the Penalty Tracker, I did not have any real experience with SQL databases. Because of this, I decided that the best way to store the data was to simply place it into a single HTML file. At first, this was fine but as the season progressed I quickly learned that this was not the way I wanted to go. As the number of entries increased, the page's file size got larger and it took longer to load. This was not ideal.
+
+So during the first off season, I decided that the way to solve this was to store all the data in a SQL database. This would allow me to set up a Search page, so the user can explicitly say what they are looking for and get it without having to load all of the data (unless they wanted to)
+
 * How I get the data
 * How I display the data to the user
 * Future Improvements
