@@ -20,5 +20,8 @@ So during the first off season, I decided that the way to solve this was to stor
 * How I display the data to the user
 * Future Improvements
   * Playoffs vs Regular Season
+
+    Currently the way that I handled this is rather simple. At the beginning of the playoffs I created a new table in the database and I changed the main script to put any new data into that table. After the new table was created, I added a new option to the Penalty Tracker form which allowed you to switch between tables. The good thing about this style is that it makes it really simple to update in the future and has minimal impact to the user.
+
   * How to access past seasons
   * Emailing when the script fails to run.
