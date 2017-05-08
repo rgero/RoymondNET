@@ -51,11 +51,6 @@
                     {% else %}
                         <LI><a href="{% url 'about' %}">About</a></LI>
                     {% endif %}
-                    {% if active == "blog" %}
-                        <LI class="active"><a href="/blog">Blog</a></LI>
-                    {% else %}
-                        <LI><a href="/blog">Blog</a></LI>
-                    {% endif %}
                     {% if active == "projects" %}
                         <LI class="active"><a href="{% url 'projects' %}">Project Hub</a></LI>
                     {% else %}
