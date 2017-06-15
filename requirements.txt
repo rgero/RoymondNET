@@ -1,0 +1,4 @@
+django==1.10.3
+django-markdown-deux==1.0.5
+markdown2==2.3.1
+pillow==4.0.0
