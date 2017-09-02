@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+import datetime, math
 
 # Create your views here.
 
@@ -18,3 +19,14 @@ def about(request):
         'pageTitle': 'About Me - Roymond.net'
       }
     return render(request, 'personal/about.html', renderDic)
+
+def timeLeft(request):
+    today = datetime.date.today()
+    august = datetime.date(2018,8,1)
+    diff = int(math.fabs((august - today).days))
+    renderDic = {
+        'active': None,
+        'jumbotron': str(diff) + " days",
+        'pageTitle': 'Time Left - Roymond.net'
+      }
+    return render(request, 'personal/timeLeft.html', renderDic)
