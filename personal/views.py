@@ -24,9 +24,12 @@ def timeLeft(request):
     today = datetime.date.today()
     august = datetime.date(2018,8,1)
     diff = int(math.fabs((august - today).days))
+    weeks = int(math.floor(math.fabs((august - today).days) / 7))
+    print(weeks)
     renderDic = {
         'active': None,
         'jumbotron': str(diff) + " days",
-        'pageTitle': 'Time Left - Roymond.net'
+        'pageTitle': 'Time Left - Roymond.net',
+        'weeksLeft': str(weeks)
       }
     return render(request, 'personal/timeLeft.html', renderDic)
