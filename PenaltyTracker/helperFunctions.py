@@ -34,12 +34,24 @@ def getFullNames(i):
                 "TBL":"Tampa Bay Lightning",
                 "TOR":"Toronto Maple Leafs",
                 "VAN":"Vancouver Canucks",
+                "VGK":"Vegas Golden Knights",
                 "WSH":"Washington Capitals",
                 "WPG":"Winnipeg Jets"}
   returnList = []
   for entry in i:
     returnList.append(teamList[entry])
   return returnList
+
+def convertSeasonType(s):
+    print(s)
+    if s == "Regular_16_17":
+        return "2016-17 Regular Season"
+    elif s == "Playoffs_16_17":
+        return "2016-17 Playoffs"
+    elif s == "Regular_17_18":
+        return "2017-18 Regular Season"
+    else:
+        return "Gobbler"
 
 def listToSQLIncludeString(entry):
     ''' Input:

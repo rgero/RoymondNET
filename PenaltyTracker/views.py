@@ -38,7 +38,7 @@ def form_test(request):
 
           queryResults = performSearch(Data)
 
-          return render(request, 'results.html', {"data":queryResults, "time":datetime.date.today(), "inputData":cleanedData})
+          return render(request, 'results.html', {"data":queryResults, "time":datetime.date.today(), "inputData":cleanedData, "season":convertSeasonType(seasonType)})
 
     # if a GET (or any other method) we'll create a blank form
     else:

@@ -33,6 +33,7 @@ class PenaltySearchForm(forms.Form):
               ("TBL","Tampa Bay Lightning"),
               ("TOR","Toronto Maple Leafs"),
               ("VAN","Vancouver Canucks"),
+              ("VGK","Vegas Golden Knights"),
               ("WSH","Washington Capitals"),
               ("WPG","Winnipeg Jets")]
   playerName = forms.CharField(label="Player Name", max_length=100, required=False)
