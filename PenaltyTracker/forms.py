@@ -43,4 +43,9 @@ class PenaltySearchForm(forms.Form):
   penalty = forms.CharField(label="Penalty", max_length=100, required=False)
   startDate = forms.DateField(label="Start Date", required=False, widget=forms.SelectDateWidget(years=YEAR_CHOICES))
   endDate = forms.DateField(label="End Date", required=False, widget=forms.SelectDateWidget(years=YEAR_CHOICES))
-  database = forms.ChoiceField(label="Which season?",choices=[("Regular_16_17","2016-17 Regular"),("Playoffs_16_17","2016-17 Playoffs"), ("Regular_17_18","2017-18 Regular")], required=True)
+  database = forms.ChoiceField( label="Which season?",
+                                choices=[ ("Regular_16_17","2016-17 Regular"),
+                                          ("Playoffs_16_17","2016-17 Playoffs"), 
+                                          ("Regular_17_18","2017-18 Regular"), 
+                                          ("Playoffs_17_18","2017-18 Playoffs")],
+                                required=True)
