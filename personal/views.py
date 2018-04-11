@@ -12,14 +12,6 @@ def index(request):
       }
     return render(request, 'personal/index.html', renderDic)
 
-def about(request):
-    renderDic = {
-        'active': "about",
-        'jumbotron': "About Me",
-        'pageTitle': 'About Me - Roymond.net'
-      }
-    return render(request, 'personal/about.html', renderDic)
-
 def timeLeft(request):
     today = datetime.date.today()
     august = datetime.date(2018,8,1)
