@@ -48,5 +48,5 @@ class PenaltySearchForm(forms.Form):
                                           ("Playoffs_16_17","2016-17 Playoffs"), 
                                           ("Regular_17_18","2017-18 Regular"), 
                                           ("Playoffs_17_18","2017-18 Playoffs"),
-                                          ("Playoffs_18_19","2018-19 Playoffs")],
+                                          ("Regular_18_19","2018-19 Regular")],
                                 required=True)
