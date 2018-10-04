@@ -52,8 +52,10 @@ def convertSeasonType(s):
         return "2017-18 Regular Season"
     elif s == "Playoffs_17_18":
         return "2017-18 Playoffs"
+    elif s == "Regular_18_19":
+        return "2018-19 Regular Season"
     else:
-        return "Gobbler"
+        return "None"
 
 def listToSQLIncludeString(entry):
     ''' Input:
@@ -99,7 +101,6 @@ def constructWHERE(entry):
       penaltySearchString = "("
       for i in range(0, len(penaltyEntry)-1):
           penaltySearchString += " penalty LIKE '%" + penaltyEntry[i] + "%' OR "
-      penaltySearchString += " penalty LIKE '%" + penaltyEntry[len(refEntry)-1] + "%')"
       listOfItems.append(penaltySearchString)
 
   #Parsing the team names
