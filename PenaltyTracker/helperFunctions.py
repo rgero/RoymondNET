@@ -116,12 +116,12 @@ def constructWHERE(entry):
 
   # Parsing the Game Dates as a "Between" statement.
   if entry["startDate"] != None and entry["endDate"] != None:
-      listOfItems.append("gameDate BETWEEN date('" + entry["startDate"].strftime("%m/%d/%Y") + "') AND date('" \
-      + (entry["endDate"]).strftime("%m/%d/%Y") + "') ")
+      listOfItems.append("gameDate BETWEEN date('" + entry["startDate"].strftime("%Y-%m-%d") + "') AND date('" \
+      + (entry["endDate"]).strftime("%Y-%m-%d") + "') ")
   if entry["startDate"] == None and entry["endDate"] != None:
-      listOfItems.append("gameDate <= date('" + entry["endDate"].strftime("%m/%d/%Y") + "') ")
+      listOfItems.append("gameDate <= date('" + entry["endDate"].strftime("%Y-%m-%d") + "') ")
   if entry["startDate"] != None and entry["endDate"] == None:
-      listOfItems.append("gameDate >= date('" + entry["startDate"].strftime("%m/%d/%Y") + "')")
+      listOfItems.append("gameDate >= date('" + entry["startDate"].strftime("%Y-%m-%d") + "')")
 
   # Constructing the Where statement based on everything listed above.
   # All of the search terms must be matched, therefore "AND" is selected. The unique cases where it expands that AND statement
@@ -153,9 +153,12 @@ def performSearch(query):
   executionString = "SELECT * FROM " + tableName
   where_string = constructWHERE(query)
   if where_string!="":
-      executionString += "WHERE " + where_string
+      executionString += " WHERE " + where_string
 
   executionString += " ORDER BY gameDate"
+
+  print(executionString)
+
   try:
       results = cursor.execute(executionString).fetchall()
       return results
