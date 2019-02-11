@@ -2,7 +2,7 @@ from django import forms
 from django.forms.widgets import *
 from datetime import datetime
 
-YEAR_CHOICES = ('2016', '2017')
+YEAR_CHOICES = ('2016', '2017', '2018', '2019')
 
 class PenaltySearchForm(forms.Form):
   teamList = [("ANA","Anaheim Ducks"),

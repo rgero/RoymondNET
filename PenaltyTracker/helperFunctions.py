@@ -116,13 +116,12 @@ def constructWHERE(entry):
 
   # Parsing the Game Dates as a "Between" statement.
   if entry["startDate"] != None and entry["endDate"] != None:
-      listOfItems.append("gameDate BETWEEN '" + entry["startDate"].strftime("%m/%d/%Y") + "' AND '" \
-      + (entry["endDate"]).strftime("%m/%d/%Y") + "'")
+      listOfItems.append("gameDate BETWEEN date('" + entry["startDate"].strftime("%m/%d/%Y") + "') AND date('" \
+      + (entry["endDate"]).strftime("%m/%d/%Y") + "') ")
   if entry["startDate"] == None and entry["endDate"] != None:
-      listOfItems.append("gameDate <= '" + entry["endDate"].strftime("%m/%d/%Y") + "'")
+      listOfItems.append("gameDate <= date('" + entry["endDate"].strftime("%m/%d/%Y") + "') ")
   if entry["startDate"] != None and entry["endDate"] == None:
-      listOfItems.append("gameDate BETWEEN '" + entry["startDate"].strftime("%m/%d/%Y") + "' AND '" \
-      + (datetime.date.today()).strftime("%m/%d/%Y") + "'")
+      listOfItems.append("gameDate >= date('" + entry["startDate"].strftime("%m/%d/%Y") + "')")
 
   # Constructing the Where statement based on everything listed above.
   # All of the search terms must be matched, therefore "AND" is selected. The unique cases where it expands that AND statement
