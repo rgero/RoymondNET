@@ -54,6 +54,8 @@ def convertSeasonType(s):
         return "2017-18 Playoffs"
     elif s == "Regular_18_19":
         return "2018-19 Regular Season"
+    elif s == "Playoffs_18_19":
+        return "2018-19 Playoffs"
     else:
         return "None"
 
